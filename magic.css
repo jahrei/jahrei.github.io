@@ -1,10 +1,42 @@
-#bg-grad {
-    background-image:linear-gradient(45deg, black, #36454F);
-    width: 1920px;
-    height:1080px;
+html {
+    height: 100%;
+    
 }
 
-#text {
-    color:white;
-    font-family:"Courier New";
+div {
+    white-space: pre-wrap;
+}
+
+.bg-grad {
+    background-image: linear-gradient(45deg, black, #36454F);
+    background-attachment: fixed;
+    width: auto;
+    height: 100%;
+}
+
+.trident {
+    color: white;
+    font-family: "Courier New";
+}
+
+.jahrei {
+    color: white;
+    font-family: "Courier New";    
+}
+
+
+.t_center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+}
+
+.j_center {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: float, center;
+    min-height: 100vh;
 }
