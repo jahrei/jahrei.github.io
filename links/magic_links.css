@@ -16,7 +16,7 @@ div {
   }
 
 .bg-grad {
-    background-image: linear-gradient(45deg, black, #36454F);
+    background-image: linear-gradient(45deg, black, #252522);
     background-attachment: fixed;
     width: auto;
     height: 100%;
@@ -24,28 +24,51 @@ div {
 
 .trident {
     color: white;
+    font-size: small;
     font-family: "JetBrainsMono";
     white-space: pre;
 }
 
 .jahrei {
     color: white;
+    font-size: large;
     font-family: "JetBrainsMono";    
 }
 
+.box {
+    
+}
+
+/* centering */
 
 .t_center {
-    display: flex;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /*min-height: 100vh;*/
+}
+
+.j_center {
+    display: block;
     justify-content: center;
     align-items: center;
     text-align: center;
     min-height: 100vh;
 }
 
-.j_center {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-align: float, center;
-    min-height: 100vh;
+
+
+
+/* animation styling */
+
+@keyframes fadeIn {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+body {
+    animation: fadeIn ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
 }
