@@ -1,3 +1,5 @@
+
+
 @font-face {
     font-family: 'Space Mono';
     font-style: normal;
@@ -20,14 +22,31 @@
 	}
 }
 
+.hide {
+    display: none;
+}
+
+
+.martian-mono-normal {
+    font-family: "Martian Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+}
+
+
+
 
 .jahrei-text {
     display: grid;
     place-items: center;
     height: 50;
+    padding: 5vw 4vw;
     color: #fff;
-    font-family: 'Space mono';
-    font-size: 7vw;
+    font-family: 'Martian Mono';
+    font-size: 3vw;
     animation: fadeIn 1s;
 }
 
@@ -36,14 +55,52 @@
     align-items: center;
     justify-content: space-between;
     padding: 5vw 4vw;
-    background: linear-gradient(to right, #ffffff, #e0e0e0);
+    background: linear-gradient(to right, #ffffff, #999999);
     margin: 5vw 10vw;   /* Adjust margin using viewport units */
     border: none;
     border-radius: 15px;
     cursor: pointer;
     text-decoration: none;
     opacity: 0;
-    animation: fadeIn 3s both;
+    animation: fadeIn 2s both;
+}
+
+.gradient-button-mcxxvi {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5vw 4vw;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    margin: 5vw 10vw;   /* Adjust margin using viewport units */
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    text-decoration: none;
+    opacity: 0;
+    animation: fadeIn 2s both;
+    animation-delay: 1.5s;
+
+}
+
+.gradient-button-container {
+    overflow: hidden;
+}
+
+.gradient-button-container:hover .gradient-button-mcxxvi {
+    animation: fadeIn 2s both, scrollGradient 10s linear infinite;
+    animation-delay: 1.5s;
+}
+
+@keyframes scrollGradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 
 
@@ -78,9 +135,9 @@
 .button-text {
     color: black;
     text-align: right;
-    font-family: 'Space Mono';
+    font-family: 'Martian Mono';
     font-size: 5vw;
-    font-weight: 700;
+    font-weight: 500;
     position: flex;
     top: 0;
     left: 100%;
@@ -88,12 +145,41 @@
     transition: transform 0.5s ease;
 }
 
+
 .gradient-button:hover .button-text {
     transform: translateX(-50%);
 }
 
+.gradient-button-mcxxvi:hover .button-text-mcxxvi {
+    transform: translateX(-30%);
+    opacity: 50%;
+}
+
+.button-text-mcxxvi {
+    color: white;
+    text-align: right;
+    font-family: 'Martian Mono';
+    font-size: 5vw;
+    font-weight: 500;
+    position: flex;
+    top: 0;
+    left: 100%;
+    transition: transform 0.5s ease;
+
+}
+
+.button-icon:hover + .hide{
+    display: flex;
+    color: gray;
+    text-align: right;
+    font-family: 'Martian Mono';
+    font-size: 2vw;
+    font-weight: 300;
+}
+
+
 .bg-grad {
-    background-image: linear-gradient(45deg, black, #0f0f0f) ;
+    background-image: linear-gradient(45deg, black, #111111) ;
     background-attachment: fixed;
     width: auto;
     height: 100%;
