@@ -48,6 +48,10 @@
     font-family: 'Martian Mono';
     font-size: 3vw;
     animation: fadeIn 1s;
+
+    text-shadow:
+        0 0 7px #fff,
+        0 0 151px #fff;
 }
 
 .gradient-button {
@@ -70,7 +74,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 5vw 4vw;
-    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background: linear-gradient(45deg, #0f0f0f, #000000);
     margin: 5vw 10vw;   /* Adjust margin using viewport units */
     border: none;
     border-radius: 15px;
@@ -80,15 +84,6 @@
     animation: fadeIn 2s both;
     animation-delay: 1.5s;
 
-}
-
-.gradient-button-container {
-    overflow: hidden;
-}
-
-.gradient-button-container:hover .gradient-button-mcxxvi {
-    animation: fadeIn 2s both, scrollGradient 10s linear infinite;
-    animation-delay: 1.5s;
 }
 
 @keyframes scrollGradient {
