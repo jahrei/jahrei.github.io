@@ -6,6 +6,22 @@ div {
     white-space: pre-wrap;
 }
 
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    height: 100vh;
+    position: relative; 
+
+    animation: fadeIn ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
 /* JetBrains Mono as font */
 
 @font-face {
@@ -20,7 +36,7 @@ div {
 /* background styling */
 
 .bg-grad {
-    background-image: linear-gradient(45deg, black, #252522);
+    background-image: linear-gradient(45deg, black, #0f0f0f) ;
     background-attachment: fixed;
     width: auto;
     height: 100%;
@@ -32,7 +48,7 @@ div {
     color: white;
     font-family: "JetBrainsMono";
     white-space: pre;
-    text-shadow: 5px 5px 5px black;  
+    /* text-shadow: 5px 5px 5px black;   */
 }
 
 .tridentCenter {
@@ -40,7 +56,7 @@ div {
     justify-content: center; 
     align-items: center;
     text-align: center;
-    min-height: 95vh;
+    min-height: 95vw;
 }
 
 /* jahrei text styling */
@@ -52,11 +68,11 @@ div {
 }
 
 .jahreiPosition {
-    position: fixed;
-    top: 0;
-    right: 0;
-    padding: 50px;
-    text-align: right;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    text-align: center;
+    min-height: 95vw;
 }
 
 /* links text styling */
@@ -82,8 +98,4 @@ div {
     100% { opacity: 1; }
 }
 
-body {
-    animation: fadeIn ease 3s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-}
+
