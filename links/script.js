@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
             image: "zenith.png"
         },
         "plasma": {
-            links: ["https://youtube.com/@gd_plasma", "https://tiktok.com/@gd_plasma", "https://osu.ppy.sh/users/12022047"],
+            links: ["https://youtube.com/@gd_plasma", "https://tiktok.com/@gd_plasma", "https://osu.ppy.sh/users/12022047", "https://etternaonline.com/"],
             image: "plasma.png"
         },
         "cherry": {
@@ -21,14 +21,14 @@ document.addEventListener('DOMContentLoaded', function() {
     // Mapping URLs to friendly names
     const urlLabels = {
         "https://instagram.com/jahreikun": "instagram | @jahreikun",
-        "https://instagram.com/jahreipwr": "instagram | @jahreipwr (lifting)",
-        "https://tiktok.com/@jahreikun": "tiktok |  @jahreikun",
+        "https://instagram.com/jahreipwr": "instagram | @jahreipwr (lifting acc)",
+        "https://tiktok.com/@jahreikun": "tiktok | @jahreikun",
         "https://youtube.com/@jahreikun": "youtube | @jahreikun",
 
         "https://youtube.com/@zeniiyama": "youtube | @zeniiyama",
         "https://twitter.com/zeniiyama": "twitter | @zeniiyama",
-        "https://osu.ppy.sh/users/12022047": "osu | zenit",
-        "https://boku.tachi.ac/u/zenith": "bokutachi | zenith",
+        "https://osu.ppy.sh/users/12022047": "osu! | zenit",
+        "https://boku.tachi.ac/u/zenith": "bokutachi (BMS) | zenith",
         
         "https://youtube.com/@gd_plasma": "youtube | @gd_plasma",
         "https://tiktok.com/@gd_plasma": "tiktok | @gd_plasma",
