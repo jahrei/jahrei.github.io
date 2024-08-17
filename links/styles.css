@@ -1,6 +1,7 @@
 /* styles.css */
 body, html {
     font-family: 'Inconsolata', monospace; /* Apply Inconsolata font */
+    font-size: 22px;
     padding: 0;
     margin: 0;
     width: 100%;
