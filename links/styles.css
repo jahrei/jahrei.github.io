@@ -1,0 +1,75 @@
+/* styles.css */
+body, html {
+    font-family: 'Inconsolata', monospace; /* Apply Inconsolata font */
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    color: white; /* Ensures text is visible against a dark background */
+}
+
+.bg-grad {
+    background-image: linear-gradient(45deg, black, #111111);
+    background-attachment: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#alias-selector {
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#alias-selector button {
+    cursor: pointer;
+    font-size: 13px; /* Adjusted for minimalistic arrow size */
+    padding: 0 15px; /* Reduced padding */
+    border: none;
+    background-color: transparent;
+    color: white;
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+#alias-selector button:hover {
+    color: #CCCCCC; /* Light grey for hover effect */
+}
+
+#link-list {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+#link-list li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease; /* Smooth transition for hover effects */
+}
+
+#link-list li a:hover {
+    color: #CCCCCC; /* Light grey for hover effect */
+}
+
+#alias-image {
+    max-width: 50vw; /* Adjusted width for proper visibility */
+    height: auto;
+    margin: 20px 30px; /* Adjusted margins for space between arrows */
+    border-radius: 5px;
+}
+
+#static-image {
+    position: fixed; /* Keep the image fixed during scroll */
+    bottom: 20px; /* Align at the bottom */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust for exact centering */
+    width: 100px; /* Adjust the width as necessary */
+    height: auto; /* Keep the aspect ratio */
+    z-index: 1000; /* Ensure it's on top of other content */
+}
