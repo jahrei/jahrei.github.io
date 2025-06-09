@@ -1,12 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="350 20 600 500" width="20" height="20" class="inline-svg">
     <!-- CREDIT TO: https://codepen.io/jenniesyip/pen/WpxQKy -->
-    <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="350 20 600 500" width="20" height="20" class="inline-svg">
-        <defs>
-          <linearGradient id="linear" x1="0%" y1="0%" x2="100%" y2="0%">
+    <defs>
+        <linearGradient id="linear" x1="0%" y1="0%" x2="100%" y2="0%">
             <stop offset="0%"   stop-color="#148BB1"/>
             <stop offset="100%" stop-color="#DBE2E8"/>
-          </linearGradient>
-        </defs>
-        <g id="module-01" transform="translate(-1.000000, 0.000000)" class="path path-01" stroke="url(#linear)" stroke-width="4" fill="none" fill-rule="evenodd" stroke-linecap="butt" stroke-linejoin="round" fill="none" stroke-opacity="1" stroke-dasharray="8,960,24,960,16,400" stroke-dashoffset="6400">
+        </linearGradient>
+    </defs>
+    <g id="module-01" transform="translate(-1.000000, 0.000000)" class="path path-01" stroke="url(#linear)" stroke-width="4" fill="none" fill-rule="evenodd" stroke-linecap="butt" stroke-linejoin="round" fill="none" stroke-opacity="1" stroke-dasharray="8,960,24,960,16,400" stroke-dashoffset="6400">
           <g id="C23" transform="translate(177.000000, 0.000000)">
             <polyline points="52 92 84 92 116 60 116 0"></polyline>
             <polyline points="52 84 80 84 108 56 108 0"></polyline>
@@ -1232,10 +1232,5 @@
             <polyline id="path" points="364 325 364 241 384 221 384 201"></polyline>
           </g>
         </g>
-    </svg> -->
-
-    <!-- <div class="canvas-container">
-        <script src="matrix.js" class="matrix-rain"></script>
-    </div>
-     -->
+    </svg>
     
