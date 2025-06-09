@@ -1,0 +1,15 @@
+{
+    "title": "ThinkPad Restoration",
+    "description": "Restoration and modernization of classic ThinkPad laptops, bringing new life to vintage hardware with modern components.",
+    "year": "2025-Present",
+    "category": "Laptop Restoration",
+    "status": "In Progress",
+    "order": 3,
+    "tags": ["Restoration", "Laptops", "Upgrades"],
+    "gallery": [
+        "/assets/thinkpad/placeholder1.jpg",
+        "/assets/thinkpad/placeholder2.jpg",
+        "/assets/thinkpad/placeholder3.jpg"
+    ],
+    "details": "<p>Restoration work includes:</p><ul><li>ThinkPad X220 with modern SSD and maxed RAM</li><li>Custom cooling solutions for better thermal performance</li><li>Screen upgrades to IPS panels</li><li>Battery replacements and power optimization</li><li>Custom Linux configurations for modern workloads</li></ul><p>These restored ThinkPads combine the legendary build quality and keyboard feel of classic models with modern performance capabilities, creating the perfect balance of durability and usability.</p>"
+}
