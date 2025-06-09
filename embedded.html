@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embedded Projects - Jahrei Labs</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Additional styles specific to project pages */
+        .page-header {
+            background-color: var(--light-gray);
+            padding: 5rem 0 3rem;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--dark-gray);
+            font-size: 1.2rem;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .project-card {
+            background-color: #ffffff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px var(--shadow-color);
+            transition: transform var(--transition-speed) ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            background-color: var(--accent-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-color);
+            font-weight: 500;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            color: var(--dark-gray);
+            font-size: 0.9rem;
+        }
+
+        .project-status {
+            display: inline-block;
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .status-planning {
+            background-color: #f0e0e0;
+            color: #a06060;
+        }
+
+        .status-in-progress {
+            background-color: #e0f0e0;
+            color: #60a060;
+        }
+
+        .status-completed {
+            background-color: #e0e0f0;
+            color: #6060a0;
+        }
+
+        .project-description {
+            margin-bottom: 1.5rem;
+        }
+
+        .project-details {
+            display: none;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--medium-gray);
+        }
+
+        .project-details.active {
+            display: block;
+        }
+
+        .toggle-details {
+            background: none;
+            border: none;
+            color: var(--dark-gray);
+            cursor: pointer;
+            font-family: var(--primary-font);
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .toggle-details:hover {
+            color: var(--text-color);
+        }
+
+        .toggle-details::after {
+            content: '+';
+            font-size: 1.2rem;
+        }
+
+        .toggle-details.active::after {
+            content: '-';
+        }
+
+        @media (max-width: 768px) {
+            .projects-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            }
+        }
+
+        @media (max-width: 480px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">jahrei labs</a>
+            </div>
+            <div class="nav-links">
+                <a href="hardware.html">Hardware</a>
+                <a href="software.html">Software</a>
+                <a href="embedded.html" class="active">Embedded</a>
+                <a href="index.html#about">About</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Embedded Projects</h1>
+                <p>Microcontroller-based systems, FPGA designs, and hardware-software integration projects.</p>
+            </div>
+        </section>
+
+        <section class="projects">
+            <div class="container">
+                <div class="projects-grid">
+                    <!-- Project 1 -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <span>Certfid NFC Image</span>
+                        </div>
+                        <div class="project-content">
+                            <h3>Certfid (NFC Verification)</h3>
+                            <div class="project-meta">
+                                <span>2023</span>
+                                <span>NFC Technology</span>
+                            </div>
+                            <span class="project-status status-planning">Planning Phase</span>
+                            <div class="project-description">
+                                <p>NFC-based certificate verification system for authenticating physical documents and credentials using embedded NFC tags.</p>
+                            </div>
+                            <button class="toggle-details">Show Details</button>
+                            <div class="project-details">
+                                <p>Project goals:</p>
+                                <ul>
+                                    <li>Create a system for embedding NFC tags in certificates and credentials</li>
+                                    <li>Develop secure verification protocol with cryptographic signatures</li>
+                                    <li>Build mobile app for scanning and verifying NFC tags</li>
+                                    <li>Implement tamper-evident physical integration</li>
+                                    <li>Create management system for issuing and revoking credentials</li>
+                                </ul>
+                                <p>Technologies: NFC, RFID, Microcontrollers, Cryptography</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <span>Rhythm Game Controller Image</span>
+                        </div>
+                        <div class="project-content">
+                            <h3>Arduino Rhythm Game Controller</h3>
+                            <div class="project-meta">
+                                <span>2021</span>
+                                <span>Game Hardware</span>
+                            </div>
+                            <span class="project-status status-completed">Completed</span>
+                            <div class="project-description">
+                                <p>Custom rhythm game controller built with Arduino, featuring low-latency input processing and RGB lighting effects.</p>
+                            </div>
+                            <button class="toggle-details">Show Details</button>
+                            <div class="project-details">
+                                <p>Controller features:</p>
+                                <ul>
+                                    <li>Arduino Pro Micro as the main controller</li>
+                                    <li>Custom PCB design for button connections</li>
+                                    <li>Optimized firmware for sub-1ms input latency</li>
+                                    <li>Addressable RGB LEDs with game-reactive lighting</li>
+                                    <li>USB HID interface for plug-and-play compatibility</li>
+                                </ul>
+                                <p>Technologies: Arduino, C++, PCB Design, WS2812B LEDs</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <span>FPGA Lab Image</span>
+                        </div>
+                        <div class="project-content">
+                            <h3>FPGA Digital Logic Labs</h3>
+                            <div class="project-meta">
+                                <span>2022</span>
+                                <span>Digital Logic</span>
+                            </div>
+                            <span class="project-status status-completed">Completed</span>
+                            <div class="project-description">
+                                <p>Series of FPGA-based digital logic experiments and implementations, from basic gates to complex state machines.</p>
+                            </div>
+                            <button class="toggle-details">Show Details</button>
+                            <div class="project-details">
+                                <p>Lab projects include:</p>
+                                <ul>
+                                    <li>Basic combinational logic circuits</li>
+                                    <li>Sequential logic and finite state machines</li>
+                                    <li>UART communication interface</li>
+                                    <li>VGA display controller</li>
+                                    <li>Simple CPU design with instruction set</li>
+                                </ul>
+                                <p>Technologies: Verilog, VHDL, Xilinx Artix-7 FPGA</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <span>ESP32 Board Image</span>
+                        </div>
+                        <div class="project-content">
+                            <h3>ESP32/STM32 Tinker Boards</h3>
+                            <div class="project-meta">
+                                <span>2020-Present</span>
+                                <span>Microcontrollers</span>
+                            </div>
+                            <span class="project-status status-in-progress">Ongoing</span>
+                            <div class="project-description">
+                                <p>Collection of ESP32 and STM32 development boards set up for various experiments and rapid prototyping of embedded systems.</p>
+                            </div>
+                            <button class="toggle-details">Show Details</button>
+                            <div class="project-details">
+                                <p>Board configurations:</p>
+                                <ul>
+                                    <li>ESP32 with WiFi/Bluetooth connectivity for IoT projects</li>
+                                    <li>STM32F4 high-performance boards for real-time applications</li>
+                                    <li>Custom breakout boards with various sensors</li>
+                                    <li>Development environments for Arduino, ESP-IDF, and STM32CubeIDE</li>
+                                    <li>Breadboard-friendly designs for quick prototyping</li>
+                                </ul>
+                                <p>Technologies: ESP32, STM32, C/C++, FreeRTOS</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 5 -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <span>Sensor Interface Image</span>
+                        </div>
+                        <div class="project-content">
+                            <h3>GPIO/Sensor Interfacing</h3>
+                            <div class="project-meta">
+                                <span>2021</span>
+                                <span>Sensors & I/O</span>
+                            </div>
+                            <span class="project-status status-completed">Completed</span>
+                            <div class="project-description">
+                                <p>Comprehensive exploration of GPIO and sensor interfacing techniques across various microcontroller platforms.</p>
+                            </div>
+                            <button class="toggle-details">Show Details</button>
+                            <div class="project-details">
+                                <p>Interface implementations:</p>
+                                <ul>
+                                    <li>I2C, SPI, and UART communication protocols</li>
+                                    <li>Analog sensors with ADC processing</li>
+                                    <li>Digital sensors with interrupt handling</li>
+                                    <li>Motor control with PWM and driver circuits</li>
+                                    <li>Data logging and visualization systems</li>
+                                </ul>
+                                <p>Technologies: Arduino, Raspberry Pi, Various Sensors, Python, C++</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Jahrei Labs. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Project details toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggleButtons = document.querySelectorAll('.toggle-details');
+            
+            toggleButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const details = this.nextElementSibling;
+                    details.classList.toggle('active');
+                    this.classList.toggle('active');
+                    
+                    if (details.classList.contains('active')) {
+                        this.textContent = 'Hide Details';
+                    } else {
+                        this.textContent = 'Show Details';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

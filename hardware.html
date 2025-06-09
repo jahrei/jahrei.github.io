@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hardware Projects - Jahrei Labs</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Additional styles specific to project pages */
+        .page-header {
+            background-color: var(--light-gray);
+            padding: 5rem 0 3rem;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--dark-gray);
+            font-size: 1.2rem;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .project-card {
+            background-color: #ffffff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px var(--shadow-color);
+            transition: transform var(--transition-speed) ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            background-color: var(--accent-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-color);
+            font-weight: 500;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            color: var(--dark-gray);
+            font-size: 0.9rem;
+        }
+
+        .project-description {
+            margin-bottom: 1.5rem;
+        }
+
+        .project-details {
+            display: none;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--medium-gray);
+        }
+
+        .project-details.active {
+            display: block;
+        }
+
+        .toggle-details {
+            background: none;
+            border: none;
+            color: var(--dark-gray);
+            cursor: pointer;
+            font-family: var(--primary-font);
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .toggle-details:hover {
+            color: var(--text-color);
+        }
+
+        .toggle-details::after {
+            content: '+';
+            font-size: 1.2rem;
+        }
+
+        .toggle-details.active::after {
+            content: '-';
+        }
+
+        @media (max-width: 768px) {
+            .projects-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            }
+        }
+
+        @media (max-width: 480px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">jahrei labs</a>
+            </div>
+            <div class="nav-links">
+                <a href="hardware.html" class="active">Hardware</a>
+                <a href="software.html">Software</a>
+                <a href="embedded.html">Embedded</a>
+                <a href="index.html#about">About</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Hardware Projects</h1>
+                <p>Custom builds, modifications, and hardware experiments exploring the physical side of technology.</p>
+            </div>
+        </section>
+
+        <section class="projects">
+            <div class="container">
+                <div class="projects-grid">
+                    <!-- Project 1 -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <span>IIDX Controller Image</span>
+                        </div>
+                        <div class="project-content">
+                            <h3>Custom IIDX Controllers</h3>
+                            <div class="project-meta">
+                                <span>2022</span>
+                                <span>Arcade Hardware</span>
+                            </div>
+                            <div class="project-description">
+                                <p>Custom-built controllers for the rhythm game beatmania IIDX, featuring arcade-quality parts and custom PCB design.</p>
+                            </div>
+                            <button class="toggle-details">Show Details</button>
+                            <div class="project-details">
+                                <p>These controllers feature:</p>
+                                <ul>
+                                    <li>Sanwa OBSF-24 arcade buttons</li>
+                                    <li>High-precision encoders for the turntable</li>
+                                    <li>Custom PCB with Arduino-based firmware</li>
+                                    <li>Laser-cut acrylic case with custom vinyl wrap</li>
+                                    <li>USB-C connectivity with low latency response</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <span>Mechanical Keyboard Image</span>
+                        </div>
+                        <div class="project-content">
+                            <h3>Mechanical Keyboard Mods</h3>
+                            <div class="project-meta">
+                                <span>2021-Present</span>
+                                <span>Input Devices</span>
+                            </div>
+                            <div class="project-description">
+                                <p>Custom mechanical keyboard modifications including switch swapping, case modifications, and custom firmware implementations.</p>
+                            </div>
+                            <button class="toggle-details">Show Details</button>
+                            <div class="project-details">
+                                <p>Keyboard projects include:</p>
+                                <ul>
+                                    <li>GMMK Pro with lubed Gateron Black Ink switches</li>
+                                    <li>Custom QMK firmware with macro programming</li>
+                                    <li>Sound dampening modifications with foam and tape</li>
+                                    <li>Custom keycap sets and artisan keycaps</li>
+                                    <li>Bluetooth conversion for vintage keyboards</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <span>ThinkPad Image</span>
+                        </div>
+                        <div class="project-content">
+                            <h3>ThinkPad Restoration</h3>
+                            <div class="project-meta">
+                                <span>2020</span>
+                                <span>Laptop Restoration</span>
+                            </div>
+                            <div class="project-description">
+                                <p>Restoration and modernization of classic ThinkPad laptops, bringing new life to vintage hardware with modern components.</p>
+                            </div>
+                            <button class="toggle-details">Show Details</button>
+                            <div class="project-details">
+                                <p>Restoration work includes:</p>
+                                <ul>
+                                    <li>ThinkPad X220 with modern SSD and maxed RAM</li>
+                                    <li>Custom cooling solutions for better thermal performance</li>
+                                    <li>Screen upgrades to IPS panels</li>
+                                    <li>Battery replacements and power optimization</li>
+                                    <li>Custom Linux configurations for modern workloads</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <span>Vintage PC Image</span>
+                        </div>
+                        <div class="project-content">
+                            <h3>Vintage PC Builds</h3>
+                            <div class="project-meta">
+                                <span>2019-2022</span>
+                                <span>Retro Computing</span>
+                            </div>
+                            <div class="project-description">
+                                <p>Building and restoring vintage PC systems from the 80s and 90s, focusing on period-correct hardware with modern conveniences.</p>
+                            </div>
+                            <button class="toggle-details">Show Details</button>
+                            <div class="project-details">
+                                <p>Notable builds include:</p>
+                                <ul>
+                                    <li>486DX4-100 gaming PC with Sound Blaster 16</li>
+                                    <li>Windows 98 gaming rig with 3dfx Voodoo2</li>
+                                    <li>Modern storage solutions (SD to IDE adapters)</li>
+                                    <li>CRT monitor restoration and calibration</li>
+                                    <li>Period-correct software configurations</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 5 -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <span>Linux Workstation Image</span>
+                        </div>
+                        <div class="project-content">
+                            <h3>Linux War Machine</h3>
+                            <div class="project-meta">
+                                <span>2023</span>
+                                <span>Workstation Build</span>
+                            </div>
+                            <div class="project-description">
+                                <p>High-performance Linux workstation built for development, virtualization, and computational tasks with a focus on efficiency.</p>
+                            </div>
+                            <button class="toggle-details">Show Details</button>
+                            <div class="project-details">
+                                <p>System specifications:</p>
+                                <ul>
+                                    <li>AMD Ryzen 9 5950X (16-core/32-thread)</li>
+                                    <li>64GB DDR4-3600 RAM</li>
+                                    <li>NVIDIA RTX 3080 with CUDA support</li>
+                                    <li>2TB NVMe SSD + 8TB storage array</li>
+                                    <li>Custom water cooling loop</li>
+                                    <li>Arch Linux with custom kernel optimizations</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Jahrei Labs. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Project details toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggleButtons = document.querySelectorAll('.toggle-details');
+            
+            toggleButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const details = this.nextElementSibling;
+                    details.classList.toggle('active');
+                    this.classList.toggle('active');
+                    
+                    if (details.classList.contains('active')) {
+                        this.textContent = 'Hide Details';
+                    } else {
+                        this.textContent = 'Show Details';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
