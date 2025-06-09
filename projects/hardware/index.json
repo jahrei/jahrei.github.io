@@ -1,0 +1,11 @@
+{
+    "category": "hardware",
+    "projects": [
+        "kairos.json",
+        "mechanical-keyboards.json",
+        "delabity.json",
+        "chronos.json",
+        "thinkpad-restoration.json",
+        "vintage-pc-builds.json"
+    ]
+}
