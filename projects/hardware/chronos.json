@@ -1,0 +1,16 @@
+{
+    "title": "Chronos",
+    "description": "My first ever PC build, a milestone in my hardware journey.",
+    "year": "2020",
+    "category": "PC Build",
+    "status": "Completed",
+    "order": 5,
+    "tags": ["PC Build", "First Build", "Hardware"],
+    "gallery": [
+        "/assets/chronos/1.png",
+        "/assets/chronos/2.png",
+        "/assets/chronos/3.png",
+        "/assets/chronos/4.png"
+    ],
+    "details": "<p>My first custom PC build, marking the beginning of my hardware journey. This system taught me the fundamentals of computer hardware assembly and troubleshooting.</p><p>While the specific components have been repurposed for other projects, this build represents an important milestone in my technical development.</p>"
+}
