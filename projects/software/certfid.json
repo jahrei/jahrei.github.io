@@ -1,0 +1,14 @@
+{
+    "title": "CertFID",
+    "description": "Modern responsive website for RFID certificate verification application.",
+    "year": "2023",
+    "category": "Web Development",
+    "status": "In Progress",
+    "tags": ["Web Development", "UI/UX", "RFID"],
+    "gallery": [
+        "/assets/certfid/placeholder1.jpg",
+        "/assets/certfid/placeholder2.jpg",
+        "/assets/certfid/placeholder3.jpg"
+    ],
+    "details": "<p>Project features:</p><ul><li>Responsive web interface for certificate verification</li><li>Admin dashboard for managing certificates and credentials</li><li>Integration with NFC/RFID scanning hardware</li><li>Secure authentication and verification protocols</li><li>Real-time status updates and notifications</li><li>Comprehensive reporting and analytics</li></ul><p>Technologies: React, Node.js, Express, MongoDB, WebAuthn</p>"
+}

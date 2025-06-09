@@ -1,0 +1,15 @@
+{
+    "title": "Project Title",
+    "description": "A brief description of the project that explains what it is and its purpose.",
+    "year": "2023",
+    "category": "Project Category",
+    "status": "Completed",
+    "order": 10,
+    "tags": ["tag1", "tag2", "tag3"],
+    "gallery": [
+        "/assets/project-name/image1.jpg",
+        "/assets/project-name/image2.jpg",
+        "/assets/project-name/image3.jpg"
+    ],
+    "details": "<p>Detailed description of the project.</p><ul><li>Feature 1</li><li>Feature 2</li><li>Feature 3</li></ul><p>Technologies: Tech1, Tech2, Tech3</p>"
+}

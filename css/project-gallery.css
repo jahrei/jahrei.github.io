@@ -1,0 +1,361 @@
+/* Project Gallery Styles */
+
+.project-gallery {
+    width: 100%;
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.gallery-main {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 15px 15px 0 0;
+    background-color: var(--accent-color);
+}
+
+.gallery-main-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.gallery-main-image:hover {
+    transform: scale(1.05);
+}
+
+.gallery-thumbnails {
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    background-color: #f5f5f5;
+    overflow-x: auto;
+    scrollbar-width: thin;
+}
+
+.gallery-thumbnail {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+}
+
+.gallery-thumbnail.active {
+    opacity: 1;
+    box-shadow: 0 0 0 2px var(--accent-color);
+}
+
+.gallery-thumbnail:hover {
+    opacity: 0.9;
+}
+
+/* Project expanded view styles */
+.project-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.project-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.project-expanded {
+    display: flex;
+    width: 90%;
+    max-width: 1200px;
+    height: 85vh;
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.project-expanded-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: background-color 0.2s ease;
+}
+
+.project-expanded-close:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.project-expanded-gallery {
+    flex: 1;
+    max-width: 50%;
+    height: 100%;
+    background-color: #f5f5f5;
+    position: relative;
+}
+
+.project-expanded-image {
+    width: 100%;
+    height: calc(100% - 80px);
+    object-fit: contain;
+    background-color: #000;
+}
+
+.project-expanded-thumbnails {
+    height: 80px;
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    background-color: #333;
+    overflow-x: auto;
+    scrollbar-width: thin;
+}
+
+.project-expanded-thumbnail {
+    height: 60px;
+    width: auto;
+    object-fit: cover;
+    border-radius: 4px;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+}
+
+.project-expanded-thumbnail.active {
+    opacity: 1;
+    box-shadow: 0 0 0 2px var(--accent-color);
+}
+
+.project-expanded-content {
+    flex: 1;
+    max-width: 50%;
+    padding: 2rem;
+    overflow-y: auto;
+}
+
+.project-expanded-header {
+    margin-bottom: 1.5rem;
+}
+
+.project-expanded-title {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.project-expanded-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    color: var(--dark-gray);
+}
+
+.project-expanded-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.project-expanded-tag {
+    background-color: var(--light-gray);
+    padding: 0.2rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    color: var(--dark-gray);
+}
+
+.project-expanded-description {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.project-expanded-details {
+    border-top: 1px solid var(--light-gray);
+    padding-top: 1.5rem;
+}
+
+.project-expanded-details h3 {
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.project-expanded-details ul {
+    margin-left: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.project-expanded-details li {
+    margin-bottom: 0.5rem;
+}
+
+/* Lightbox styles */
+.gallery-lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1100;
+}
+
+.lightbox-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+.lightbox-image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox-image {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 1101;
+}
+
+.lightbox-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    color: white;
+}
+
+.lightbox-prev,
+.lightbox-next {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+}
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.lightbox-counter {
+    font-size: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .project-expanded {
+        flex-direction: column;
+        height: 90vh;
+    }
+    
+    .project-expanded-gallery,
+    .project-expanded-content {
+        max-width: 100%;
+    }
+    
+    .project-expanded-gallery {
+        height: 40%;
+    }
+    
+    .project-expanded-image {
+        height: calc(100% - 60px);
+    }
+    
+    .project-expanded-thumbnails {
+        height: 60px;
+    }
+    
+    .project-expanded-thumbnail {
+        height: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-main {
+        height: 200px;
+    }
+    
+    .gallery-thumbnail {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .project-expanded-title {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-main {
+        height: 180px;
+    }
+    
+    .gallery-thumbnails {
+        gap: 0.25rem;
+    }
+    
+    .gallery-thumbnail {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .project-expanded {
+        width: 95%;
+    }
+    
+    .project-expanded-content {
+        padding: 1rem;
+    }
+}

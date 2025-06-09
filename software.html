@@ -6,15 +6,18 @@
     <title>Software Projects - Jahrei Labs</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="about-overlay.css">
+    <link rel="stylesheet" href="css/project-gallery.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         /* Additional styles specific to project pages */
         .page-header {
-            background-color: var(--light-gray);
+            background-color: rgba(245, 245, 245, 0.7);
             padding: 5rem 0 3rem;
             text-align: center;
+            position: relative;
+            z-index: 1;
         }
 
         .page-header h1 {
@@ -49,18 +52,30 @@
             border-radius: 30px;
             cursor: pointer;
             font-family: var(--primary-font);
-            font-weight: 500;
+            font-size: 0.9rem;
             transition: all var(--transition-speed) ease;
         }
 
-        .filter-btn:hover, .filter-btn.active {
-            background-color: var(--accent-color);
+        .filter-btn:hover {
+            background-color: var(--medium-gray);
         }
 
+        .filter-btn.active {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .projects {
+            position: relative;
+            z-index: 1;
+            padding: 2rem 0;
+        }
+        
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
             gap: 2rem;
+            margin-top: 1rem;
         }
 
         .project-card {
@@ -69,6 +84,8 @@
             overflow: hidden;
             box-shadow: 0 5px 15px var(--shadow-color);
             transition: transform var(--transition-speed) ease;
+            position: relative;
+            z-index: 1;
         }
 
         .project-card:hover {
@@ -98,7 +115,7 @@
         .project-meta {
             display: flex;
             gap: 1rem;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
             color: var(--dark-gray);
             font-size: 0.9rem;
         }
@@ -115,6 +132,30 @@
             padding: 0.2rem 0.8rem;
             border-radius: 20px;
             font-size: 0.8rem;
+            color: var(--dark-gray);
+        }
+        
+        .project-status {
+            display: inline-block;
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .status-completed {
+            background-color: #e6f7e6;
+            color: #2e7d32;
+        }
+
+        .status-in-progress {
+            background-color: #fff8e1;
+            color: #f57f17;
+        }
+
+        .status-planning {
+            background-color: #e3f2fd;
+            color: #1565c0;
         }
 
         .project-description {
@@ -157,8 +198,11 @@
             content: '-';
         }
 
-        .hidden {
-            display: none;
+        .loading-indicator {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 2rem;
+            color: var(--dark-gray);
         }
 
         @media (max-width: 768px) {
@@ -222,210 +266,17 @@
                 <div class="filter-container">
                     <div class="filter-buttons">
                         <button class="filter-btn active" data-filter="all">All Projects</button>
-                        <button class="filter-btn" data-filter="web">Web Development</button>
-                        <button class="filter-btn" data-filter="productivity">Productivity</button>
-                        <button class="filter-btn" data-filter="automation">Automation</button>
-                        <button class="filter-btn" data-filter="ui">UI/UX</button>
+                        <button class="filter-btn" data-filter="Web Development">Web Development</button>
+                        <button class="filter-btn" data-filter="Productivity">Productivity</button>
+                        <button class="filter-btn" data-filter="Automation">Automation</button>
+                        <button class="filter-btn" data-filter="UI/UX">UI/UX</button>
                     </div>
                 </div>
 
                 <div class="projects-grid">
-                    <!-- Project 1 -->
-                    <div class="project-card" data-tags="productivity,automation">
-                        <div class="project-image">
-                            <span>Kairos Dashboard Image</span>
-                        </div>
-                        <div class="project-content">
-                            <h3>Kairos</h3>
-                            <div class="project-meta">
-                                <span>2022-Present</span>
-                            </div>
-                            <div class="project-tags">
-                                <span class="project-tag">Productivity</span>
-                                <span class="project-tag">Automation</span>
-                                <span class="project-tag">JavaScript</span>
-                            </div>
-                            <div class="project-description">
-                                <p>Life dashboard and automation tool designed to centralize personal productivity systems and automate routine tasks.</p>
-                            </div>
-                            <button class="toggle-details">Show Details</button>
-                            <div class="project-details">
-                                <p>Key features:</p>
-                                <ul>
-                                    <li>Customizable dashboard with widgets for different productivity systems</li>
-                                    <li>Task management with priority-based scheduling</li>
-                                    <li>API integrations with calendar, email, and note-taking apps</li>
-                                    <li>Automated routine generation based on schedule and priorities</li>
-                                    <li>Data visualization for productivity metrics</li>
-                                </ul>
-                                <p>Technologies: HTML, CSS, JavaScript, Local Storage API</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 2 -->
-                    <div class="project-card" data-tags="productivity">
-                        <div class="project-image">
-                            <span>Delabity System Image</span>
-                        </div>
-                        <div class="project-content">
-                            <h3>Delabity</h3>
-                            <div class="project-meta">
-                                <span>2021</span>
-                            </div>
-                            <div class="project-tags">
-                                <span class="project-tag">Productivity</span>
-                                <span class="project-tag">Task Management</span>
-                                <span class="project-tag">JavaScript</span>
-                            </div>
-                            <div class="project-description">
-                                <p>Task and productivity system designed to optimize workflow and reduce decision fatigue through structured planning.</p>
-                            </div>
-                            <button class="toggle-details">Show Details</button>
-                            <div class="project-details">
-                                <p>System components:</p>
-                                <ul>
-                                    <li>Task categorization by energy level and context</li>
-                                    <li>Time-blocking interface with drag-and-drop functionality</li>
-                                    <li>Focus timer with customizable Pomodoro settings</li>
-                                    <li>Daily review and planning assistant</li>
-                                    <li>Offline-first design with local data storage</li>
-                                </ul>
-                                <p>Technologies: HTML, CSS, JavaScript, IndexedDB</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 3 -->
-                    <div class="project-card" data-tags="web,ui">
-                        <div class="project-image">
-                            <span>Liftgear V2 Image</span>
-                        </div>
-                        <div class="project-content">
-                            <h3>Liftgear V2</h3>
-                            <div class="project-meta">
-                                <span>2023-Present</span>
-                            </div>
-                            <div class="project-tags">
-                                <span class="project-tag">Web Development</span>
-                                <span class="project-tag">UI/UX</span>
-                                <span class="project-tag">Shopify</span>
-                            </div>
-                            <div class="project-description">
-                                <p>Shopify store redevelopment with focus on improved UI/UX, frontend logic optimization, and automation of order processing.</p>
-                            </div>
-                            <button class="toggle-details">Show Details</button>
-                            <div class="project-details">
-                                <p>Project scope:</p>
-                                <ul>
-                                    <li>Custom Shopify theme development</li>
-                                    <li>Responsive design with mobile-first approach</li>
-                                    <li>Optimized checkout flow to reduce cart abandonment</li>
-                                    <li>Integration with inventory management systems</li>
-                                    <li>Automated order processing and fulfillment workflows</li>
-                                </ul>
-                                <p>Technologies: HTML, CSS, JavaScript, Liquid, Shopify API</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 4 -->
-                    <div class="project-card" data-tags="ui">
-                        <div class="project-image">
-                            <span>Certfid UI Kit Image</span>
-                        </div>
-                        <div class="project-content">
-                            <h3>Certfid UI Kit</h3>
-                            <div class="project-meta">
-                                <span>2022</span>
-                            </div>
-                            <div class="project-tags">
-                                <span class="project-tag">UI/UX</span>
-                                <span class="project-tag">Design System</span>
-                                <span class="project-tag">CSS</span>
-                            </div>
-                            <div class="project-description">
-                                <p>Comprehensive UI kit for the Certfid NFC certificate verification system, featuring a cohesive design language and component library.</p>
-                            </div>
-                            <button class="toggle-details">Show Details</button>
-                            <div class="project-details">
-                                <p>UI kit components:</p>
-                                <ul>
-                                    <li>Modular component system with consistent styling</li>
-                                    <li>Responsive grid system for various device sizes</li>
-                                    <li>Accessibility-focused design with WCAG compliance</li>
-                                    <li>Dark and light theme support</li>
-                                    <li>Interactive documentation with usage examples</li>
-                                </ul>
-                                <p>Technologies: HTML, CSS, JavaScript, CSS Custom Properties</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 5 -->
-                    <div class="project-card" data-tags="web">
-                        <div class="project-image">
-                            <span>Static Site Generator Image</span>
-                        </div>
-                        <div class="project-content">
-                            <h3>Custom Static Site Generator</h3>
-                            <div class="project-meta">
-                                <span>2021</span>
-                            </div>
-                            <div class="project-tags">
-                                <span class="project-tag">Web Development</span>
-                                <span class="project-tag">JavaScript</span>
-                                <span class="project-tag">Node.js</span>
-                            </div>
-                            <div class="project-description">
-                                <p>Lightweight static site generator built with vanilla JavaScript, designed for creating simple portfolio and documentation sites.</p>
-                            </div>
-                            <button class="toggle-details">Show Details</button>
-                            <div class="project-details">
-                                <p>Generator features:</p>
-                                <ul>
-                                    <li>Markdown to HTML conversion</li>
-                                    <li>Template-based page generation</li>
-                                    <li>Asset optimization (image compression, CSS minification)</li>
-                                    <li>Development server with hot reloading</li>
-                                    <li>Simple plugin system for extensibility</li>
-                                </ul>
-                                <p>Technologies: JavaScript, Node.js, Markdown</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 6 -->
-                    <div class="project-card" data-tags="automation">
-                        <div class="project-image">
-                            <span>CI/CD Pipeline Image</span>
-                        </div>
-                        <div class="project-content">
-                            <h3>DevOps CI/CD Pipelines</h3>
-                            <div class="project-meta">
-                                <span>2022</span>
-                            </div>
-                            <div class="project-tags">
-                                <span class="project-tag">Automation</span>
-                                <span class="project-tag">DevOps</span>
-                                <span class="project-tag">GitHub Actions</span>
-                            </div>
-                            <div class="project-description">
-                                <p>Automated CI/CD pipelines for various projects, focusing on streamlined testing, building, and deployment processes.</p>
-                            </div>
-                            <button class="toggle-details">Show Details</button>
-                            <div class="project-details">
-                                <p>Pipeline implementations:</p>
-                                <ul>
-                                    <li>GitHub Actions workflows for automated testing and deployment</li>
-                                    <li>Static site deployment to GitHub Pages</li>
-                                    <li>Docker container builds and registry publishing</li>
-                                    <li>Automated dependency updates and security scanning</li>
-                                    <li>Notification systems for build status</li>
-                                </ul>
-                                <p>Technologies: GitHub Actions, YAML, Bash, Docker</p>
-                            </div>
-                        </div>
+                    <!-- Projects will be loaded dynamically from JSON files -->
+                    <div class="loading-indicator">
+                        <p>Loading projects...</p>
                     </div>
                 </div>
             </div>
@@ -440,55 +291,9 @@
 
     <script src="script.js"></script>
     <script src="about-overlay.js"></script>
-    <script src="matrix-animation.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Project details toggle
-            const toggleButtons = document.querySelectorAll('.toggle-details');
-            
-            toggleButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const details = this.nextElementSibling;
-                    details.classList.toggle('active');
-                    this.classList.toggle('active');
-                    
-                    if (details.classList.contains('active')) {
-                        this.textContent = 'Hide Details';
-                    } else {
-                        this.textContent = 'Show Details';
-                    }
-                });
-            });
-
-            // Project filtering
-            const filterButtons = document.querySelectorAll('.filter-btn');
-            const projectCards = document.querySelectorAll('.project-card');
-            
-            filterButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    // Remove active class from all buttons
-                    filterButtons.forEach(btn => btn.classList.remove('active'));
-                    
-                    // Add active class to clicked button
-                    this.classList.add('active');
-                    
-                    const filter = this.getAttribute('data-filter');
-                    
-                    projectCards.forEach(card => {
-                        if (filter === 'all') {
-                            card.classList.remove('hidden');
-                        } else {
-                            const tags = card.getAttribute('data-tags');
-                            if (tags.includes(filter)) {
-                                card.classList.remove('hidden');
-                            } else {
-                                card.classList.add('hidden');
-                            }
-                        }
-                    });
-                });
-            });
-        });
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="circuit-animation.js"></script>
+    <script src="js/project-gallery.js"></script>
+    <script src="js/project-loader.js"></script>
 </body>
 </html>

@@ -1,0 +1,14 @@
+{
+    "title": "Vintage Computers",
+    "description": "Collection of restored and functional vintage computing systems from the 80s and 90s.",
+    "year": "2019-2023",
+    "category": "Retro Computing",
+    "status": "Ongoing",
+    "tags": ["Retro", "Hardware Restoration", "Vintage"],
+    "gallery": [
+        "/assets/vintage-computers/placeholder1.jpg",
+        "/assets/vintage-computers/placeholder2.jpg",
+        "/assets/vintage-computers/placeholder3.jpg"
+    ],
+    "details": "<p>Notable systems in the collection:</p><ul><li>IBM PC XT with CGA graphics</li><li>Commodore 64 with original peripherals</li><li>Apple Macintosh SE/30 with upgraded RAM</li><li>486DX4-100 gaming PC with Sound Blaster 16</li><li>Windows 98 gaming rig with 3dfx Voodoo2</li><li>Various vintage laptops and portable computers</li></ul><p>All systems have been restored to working condition with period-correct hardware and software configurations. Modern storage solutions like SD to IDE adapters have been implemented where appropriate to improve usability while maintaining authenticity.</p>"
+}

@@ -7,9 +7,9 @@
     "order": 0,
     "tags": ["PC Build", "Linux", "Workstation"],
     "gallery": [
-        "/assets/kairos/IMG_1052.png",
-        "/assets/kairos/placeholder2.jpg",
-        "/assets/kairos/placeholder3.jpg"
+        "/assets/kairos/1.png",
+        "/assets/kairos/2.png",
+        "/assets/kairos/3.png"
     ],
     "details": "<p>System specifications:</p><ul><li>AMD Ryzen 9 5950X (16-core/32-thread)</li><li>64GB DDR4-3600 RAM</li><li>NVIDIA RTX 3080 with CUDA support</li><li>2TB NVMe SSD + 8TB storage array</li><li>Custom water cooling loop</li><li>Gentoo Linux with custom kernel optimizations</li></ul><p>This build serves as both a high-performance gaming rig and a development workstation, with the flexibility of Gentoo Linux allowing for precise system customization.</p>"
 }

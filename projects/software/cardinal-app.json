@@ -1,0 +1,14 @@
+{
+    "title": "cardinal-app",
+    "description": "Life dashboard and automation tool designed to centralize personal productivity systems and automate routine tasks.",
+    "year": "2025-Present",
+    "category": "Productivity Tool",
+    "status": "In Progress",
+    "tags": ["Productivity", "Automation", "JavaScript"],
+    "gallery": [
+        "/assets/kairos-dashboard/placeholder1.jpg",
+        "/assets/kairos-dashboard/placeholder2.jpg",
+        "/assets/kairos-dashboard/placeholder3.jpg"
+    ],
+    "details": "<p>Key features:</p><ul><li>Customizable dashboard with widgets for different productivity systems</li><li>Task management with priority-based scheduling</li><li>API integrations with calendar, email, and note-taking apps</li><li>Automated routine generation based on schedule and priorities</li><li>Data visualization for productivity metrics</li></ul><p>Technologies: HTML, CSS, JavaScript, Local Storage API</p>"
+}

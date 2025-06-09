@@ -1,0 +1,14 @@
+{
+    "title": "Certfid (NFC Verification)",
+    "description": "NFC-based certificate verification system for authenticating physical documents and credentials using embedded NFC tags.",
+    "year": "2023",
+    "category": "NFC Technology",
+    "status": "Planning",
+    "tags": ["NFC", "Security", "Authentication"],
+    "gallery": [
+        "/assets/certfid-nfc/placeholder1.jpg",
+        "/assets/certfid-nfc/placeholder2.jpg",
+        "/assets/certfid-nfc/placeholder3.jpg"
+    ],
+    "details": "<p>Project goals:</p><ul><li>Create a system for embedding NFC tags in certificates and credentials</li><li>Develop secure verification protocol with cryptographic signatures</li><li>Build mobile app for scanning and verifying NFC tags</li><li>Implement tamper-evident physical integration</li><li>Create management system for issuing and revoking credentials</li></ul><p>Technologies: NFC, RFID, Microcontrollers, Cryptography</p>"
+}

@@ -1,0 +1,14 @@
+{
+    "title": "Liftgear Website",
+    "description": "Revamped to be Modern Shopify retail store with improved UI/UX and optimized frontend.",
+    "year": "2022",
+    "category": "Web Development",
+    "status": "In Progress",
+    "tags": ["Web Development", "UI/UX", "Shopify"],
+    "gallery": [
+        "/assets/liftgear/placeholder1.jpg",
+        "/assets/liftgear/placeholder2.jpg",
+        "/assets/liftgear/placeholder3.jpg"
+    ],
+    "details": "<p>Project scope:</p><ul><li>Complete redesign of store frontend with modern aesthetics</li><li>Custom theme development with responsive design</li><li>Optimized product filtering and search functionality</li><li>Streamlined checkout process to improve conversion rates</li><li>Integration with inventory management system</li><li>Automated order processing and fulfillment workflows</li></ul><p>Technologies: Shopify Liquid, JavaScript, CSS, Shopify APIs</p>"
+}

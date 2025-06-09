@@ -1,0 +1,14 @@
+{
+    "title": "CI/CD Pipelines",
+    "description": "Automated CI/CD pipelines for various projects, focusing on streamlined testing, building, and deployment processes.",
+    "year": "2022",
+    "category": "DevOps",
+    "status": "Completed",
+    "tags": ["Automation", "DevOps", "GitHub Actions"],
+    "gallery": [
+        "/assets/ci-cd/placeholder1.jpg",
+        "/assets/ci-cd/placeholder2.jpg",
+        "/assets/ci-cd/placeholder3.jpg"
+    ],
+    "details": "<p>Pipeline implementations:</p><ul><li>GitHub Actions workflows for automated testing and deployment</li><li>Docker containerization for consistent environments</li><li>Automated versioning and release management</li><li>Integration with monitoring and alerting systems</li><li>Infrastructure as Code with Terraform</li></ul><p>Technologies: GitHub Actions, Docker, Terraform, Bash</p>"
+}
