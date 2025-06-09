@@ -1,0 +1,15 @@
+{
+    "title": "Vintage PC Builds",
+    "description": "Building and restoring vintage PC systems from the 80s and 90s, focusing on period-correct hardware with modern conveniences.",
+    "year": "2019-2022",
+    "category": "Retro Computing",
+    "status": "Completed",
+    "order": 4,
+    "tags": ["Retro", "PC Building", "Restoration"],
+    "gallery": [
+        "/assets/vintage-pc/placeholder1.jpg",
+        "/assets/vintage-pc/placeholder2.jpg",
+        "/assets/vintage-pc/placeholder3.jpg"
+    ],
+    "details": "<p>Notable builds include:</p><ul><li>486DX4-100 gaming PC with Sound Blaster 16</li><li>Windows 98 gaming rig with 3dfx Voodoo2</li><li>Modern storage solutions (SD to IDE adapters)</li><li>CRT monitor restoration and calibration</li><li>Period-correct software configurations</li></ul><p>These vintage systems provide both a nostalgic computing experience and a practical way to run older software and games that don't work well in emulation.</p>"
+}
