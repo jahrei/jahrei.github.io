@@ -1,0 +1,15 @@
+{
+    "title": "Mechanical Keyboard Mods",
+    "description": "Custom mechanical keyboard modifications including switch swapping, case modifications, and custom firmware implementations.",
+    "year": "2021-Present",
+    "category": "Input Devices",
+    "status": "Ongoing",
+    "order": 2,
+    "tags": ["Keyboards", "Custom Hardware", "Firmware"],
+    "gallery": [
+        "/assets/mechanical-keyboards/placeholder1.jpg",
+        "/assets/mechanical-keyboards/placeholder2.jpg",
+        "/assets/mechanical-keyboards/placeholder3.jpg"
+    ],
+    "details": "<p>Keyboard projects include:</p><ul><li>GMMK Pro with lubed Gateron Black Ink switches</li><li>Custom QMK firmware with macro programming</li><li>Sound dampening modifications with foam and tape</li><li>Custom keycap sets and artisan keycaps</li><li>Bluetooth conversion for vintage keyboards</li></ul><p>These keyboards serve as both daily drivers for programming and specialized input devices for specific workflows.</p>"
+}
