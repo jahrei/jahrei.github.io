@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
     canvas.style.width = '100%';
     canvas.style.height = '100%';
     canvas.style.zIndex = '-1';
-    canvas.style.opacity = '0.15'; // More visible but still subtle
+    canvas.style.opacity = '0.3'; // Much more visible
     canvas.style.pointerEvents = 'none'; // Don't interfere with clicks
     
     // Get canvas context
