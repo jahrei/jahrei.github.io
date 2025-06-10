@@ -10,8 +10,25 @@ document.addEventListener('DOMContentLoaded', function() {
                     <img src="assets/signature.png" alt="Jahrei's Signature" class="signature">
                 </div>
                 <div class="about-bio">
+                    <div class="mission">
+                        <h3>Mission</h3>
+                        <p>Bridging creativity, hardware, and software to create innovative solutions for everyday problems.</p>
+                    </div>
                     <p>I'm an electrical engineering student with a passion for bridging the gap between hardware and software. My work spans across web development, embedded systems, AI, automation, and creative design.</p>
                     <p>At Jahrei Labs, I focus on creating innovative solutions that combine technical expertise with practical applications. Whether it's custom hardware builds, software tools, or embedded systems, I'm driven by the challenge of turning ideas into reality.</p>
+                    <div class="current-work">
+                        <h3>Current Work</h3>
+                        <div class="work-items">
+                            <div class="work-item">
+                                <h4>Liftgear V2</h4>
+                                <p>Shopify redevelopment with focus on UI/UX and frontend logic optimization.</p>
+                            </div>
+                            <div class="work-item">
+                                <h4>Certfid</h4>
+                                <p>NFC certificate verification system with mobile-first UI design.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="social-links-container">
                     <button class="social-links-toggle">Connect with me</button>
@@ -76,12 +93,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const aboutLinks = document.querySelectorAll('a[href="#about"]');
     aboutLinks.forEach(link => {
         link.addEventListener('click', function(e) {
-            // Only prevent default if we're showing the overlay
-            if (window.innerWidth >= 768) {
-                e.preventDefault();
-                aboutOverlay.classList.add('active');
-                document.body.style.overflow = 'hidden'; // Prevent scrolling
-            }
+            // Always prevent default and show the overlay
+            e.preventDefault();
+            aboutOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
         });
     });
     
