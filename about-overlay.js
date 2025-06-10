@@ -11,21 +11,22 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
                 <div class="about-bio">
                     <div class="mission">
-                        <h3>Mission</h3>
-                        <p>Bridging creativity, hardware, and software to create innovative solutions for everyday problems.</p>
+                        <h3>hey. ⚡️</h3>
                     </div>
-                    <p>I'm an electrical engineering student with a passion for bridging the gap between hardware and software. My work spans across web development, embedded systems, AI, automation, and creative design.</p>
-                    <p>At Jahrei Labs, I focus on creating innovative solutions that combine technical expertise with practical applications. Whether it's custom hardware builds, software tools, or embedded systems, I'm driven by the challenge of turning ideas into reality.</p>
+                    <p>i'm jether. 👋🏼</p>
+                    <div> </div>
+                    <p>electrical engineering student. passionate about high-perfomance systems - both hardware and software.</p>
+                    <p>this site aims to showcase my work- clean design and raw execution.</p>
                     <div class="current-work">
                         <h3>Current Work</h3>
                         <div class="work-items">
                             <div class="work-item">
-                                <h4>Liftgear V2</h4>
+                                <h4>Liftgear Website (E-commerce Specialist)</h4>
                                 <p>Shopify redevelopment with focus on UI/UX and frontend logic optimization.</p>
                             </div>
                             <div class="work-item">
-                                <h4>Certfid</h4>
-                                <p>NFC certificate verification system with mobile-first UI design.</p>
+                                <h4>CertFID (Fullstack Developer)</h4>
+                                <p>NFC/RFID certification verification system with mobile-first UI design.</p>
                             </div>
                         </div>
                     </div>

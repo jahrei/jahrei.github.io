@@ -7,9 +7,7 @@
     "order": 3,
     "tags": ["Restoration", "Laptops", "Upgrades"],
     "gallery": [
-        "/assets/thinkpad/placeholder1.jpg",
-        "/assets/thinkpad/placeholder2.jpg",
-        "/assets/thinkpad/placeholder3.jpg"
+        "/assets/thinkpad/T420i_1.png"
     ],
-    "details": "<p>Restoration work includes:</p><ul><li>ThinkPad X220 with modern SSD and maxed RAM</li><li>Custom cooling solutions for better thermal performance</li><li>Screen upgrades to IPS panels</li><li>Battery replacements and power optimization</li><li>Custom Linux configurations for modern workloads</li></ul><p>These restored ThinkPads combine the legendary build quality and keyboard feel of classic models with modern performance capabilities, creating the perfect balance of durability and usability.</p>"
+   "details": "<p>Restoration work began with <strong>Melissa</strong>, my Lenovo ThinkPad T420i, purchased for just $39.99 and brought back to life as a fully functional retro Windows 7 machine. The project started with BIOS cleanup, thermal repasting, and a full cleanup of the chassis. Eventually, it will receive an IPS screen upgrade and a classic keyboard mod for a true ThinkPad purist experience.</p><p>This is only the beginning. A full restoration pipeline is being built across multiple generations of IBM and Lenovo ThinkPads — from the titanium-lidded Z61t, to the ultraportable X32, to iconic mod-ready machines like the T440p and X230. Each will be refurbished with era-appropriate operating systems (Win 3.1, 98SE, XP, 7, and modern Linux), tuned for specific workflows, and displayed as part of a larger archival collection.</p><ul><li>Deep cleaning and chassis restoration</li><li>Coreboot/mod-ready units planned (X60/X61, T60)</li><li>Custom BIOS flash and RAM/SSD upgrades</li><li>Display panel swaps (IPS, AFFS upgrades)</li><li>Retro OS installations for era-authentic setups</li></ul><p>The goal is to preserve and enhance the legacy of ThinkPad engineering — combining retro aesthetics with modern modularity and performance where applicable.</p>"
 }

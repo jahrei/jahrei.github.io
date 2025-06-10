@@ -11,5 +11,5 @@
         "/assets/kairos/2.png",
         "/assets/kairos/3.png"
     ],
-    "details": "<p>System specifications:</p><ul><li>CPU: AMD Ryzen 7 7800X3D</li><li>64GB DDR4-3600 RAM</li><li>NVIDIA RTX 3080 with CUDA support</li><li>2TB NVMe SSD + 8TB storage array</li><li>Custom water cooling loop</li><li>Gentoo Linux with custom kernel optimizations</li></ul><p>This build serves as both a high-performance gaming rig and a development workstation, with the flexibility of Gentoo Linux allowing for precise system customization.</p>"
+    "details": "<p>System specifications:</p><ul><li>CPU: AMD Ryzen 7 7800X3D</li><li>RAM: 64GB DDR5-6000MHz</li><li>GPU: AMD Radeon RX 7900XTX</li><li>2TB NVMe SSD + 8TB storage array</li><li>Custom water cooling loop</li><li>Gentoo Linux with custom kernel optimizations</li></ul><p>This build serves as both a high-performance gaming rig and a development workstation, with the flexibility of Gentoo Linux allowing for absolute and precise system customization.</p>"
 }

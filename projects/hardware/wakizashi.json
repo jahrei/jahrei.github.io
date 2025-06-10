@@ -1,0 +1,14 @@
+{
+  "title": "wakizashi",
+  "description": "Ultraportable ARM-based productivity and dev machine, built on macOS with Apple Silicon.",
+  "year": "2020",
+  "category": "Ultrabook / Portable",
+  "status": "Active",
+  "order": 4,
+  "tags": ["MacBook", "Apple Silicon", "Productivity"],
+  "gallery": [
+    "/assets/wakizashi/1.png",
+    "/assets/wakizashi/2.png"
+  ],
+  "details": "<p>System specifications:</p><ul><li>CPU: Apple M1 (8-core)</li><li>8GB unified memory</li><li>256GB NVMe storage</li><li>macOS Sonoma with Unix tooling</li><li>Daily driver for school, design, and mobile development</li></ul><p>Wakizashi is my lightweight productivity machine — ideal for writing, Git, Figma, remote work, and handling the majority of creative and academic workflows on the go.</p>"
+}

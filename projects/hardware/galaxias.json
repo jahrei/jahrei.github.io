@@ -1,0 +1,13 @@
+{
+  "title": "Galaxias",
+  "description": "A custom-built Arch Linux PC originally tailored for gaming, virtual machines, and hardware tinkering.",
+  "year": "Dec 2017 - Present",
+  "category": "PC Build",
+  "status": "Completed",
+  "order": 4,
+  "tags": ["PC Build", "Linux", "Arch", "Virtualization"],
+  "gallery": [
+    "/assets/galaxias/galaxias_homescreen.png"
+  ],
+  "details": "<p>System specifications:</p><ul><li>CPU: Intel Core i7-8700K (OC'd)</li><li>32GB DDR4-3200 RAM</li><li>GPU: NVIDIA RTX 2070 Super</li><li>1TB NVMe SSD + 3TB HDD</li><li>Running Arch Linux with custom dotfiles</li></ul><p>Galaxias served as my previous main rig, handling gaming, VM experimentation, and daily dev work. Configured for flexibility and fast deployment with Arch’s bleeding-edge stack.</p>"
+}
