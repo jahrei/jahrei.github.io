@@ -38,9 +38,9 @@
 
 .about-content {
     position: relative;
-    max-width: 800px;
-    margin: 50px auto;
-    padding: 30px;
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 25px;
     background-color: white;
     border-radius: 15px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
@@ -57,8 +57,8 @@
 
 .about-close {
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 15px;
+    right: 15px;
     width: 30px;
     height: 30px;
     cursor: pointer;
@@ -88,48 +88,48 @@
 
 .signature-container {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .signature {
-    max-width: 200px;
+    max-width: 180px;
     height: auto;
 }
 
 .about-bio {
-    margin-bottom: 30px;
-    line-height: 1.8;
+    margin-bottom: 20px;
+    line-height: 1.7;
 }
 
 .about-bio .mission {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .about-bio .mission h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
+    font-size: 1.4rem;
+    margin-bottom: 8px;
     color: var(--text-color);
 }
 
 .about-bio .current-work {
-    margin-top: 25px;
+    margin-top: 20px;
 }
 
 .about-bio .current-work h3 {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
+    font-size: 1.4rem;
+    margin-bottom: 12px;
     color: var(--text-color);
 }
 
 .about-bio .work-items {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 15px;
 }
 
 .about-bio .work-item {
     background-color: #f5f5f7;
-    padding: 15px;
+    padding: 12px;
     border-radius: 10px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -140,89 +140,162 @@
 }
 
 .about-bio .work-item h4 {
-    font-size: 1.2rem;
-    margin-bottom: 8px;
+    font-size: 1.1rem;
+    margin-bottom: 6px;
     color: var(--text-color);
 }
 
 .about-bio .work-item p {
-    font-size: 0.95rem;
-    line-height: 1.6;
+    font-size: 0.9rem;
+    line-height: 1.5;
 }
 
 .social-links-container {
-    margin-top: 30px;
-}
-
-.social-links-toggle {
-    background-color: var(--accent-color);
-    color: var(--text-color);
-    border: none;
-    padding: 10px 20px;
-    border-radius: 30px;
-    font-family: var(--primary-font);
-    font-weight: 500;
-    cursor: pointer;
+    margin-top: 20px;
+    text-align: center;
+    position: relative;
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    transition: background-color 0.3s ease;
 }
 
-.social-links-toggle:hover {
+.social-circle-trigger {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    border: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 10;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.social-circle-trigger:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
     background-color: #d0d5e0;
 }
 
-.social-links-toggle::after {
-    content: '+';
-    margin-left: 10px;
-    font-size: 18px;
+.social-circle-trigger.active {
+    background-color: #d0d5e0;
+    transform: scale(1.05);
+}
+
+.social-trigger-icon {
+    width: 20px;
+    height: 20px;
     transition: transform 0.3s ease;
 }
 
-.social-links-toggle.active::after {
+.social-circle-trigger.active .social-trigger-icon {
     transform: rotate(45deg);
 }
 
-.social-links {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease;
-    margin-top: 0;
+.social-items-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
 }
 
-.social-links.active {
-    max-height: 500px;
-    margin-top: 20px;
-}
-
-.social-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 15px;
+.social-items-container.active {
+    pointer-events: auto;
 }
 
 .social-item {
-    background-color: #f5f5f7;
-    padding: 15px;
-    border-radius: 10px;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.3);
+    text-decoration: none;
+    color: var(--text-color);
 }
 
 .social-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transform: translate(-50%, -50%) scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    color: var(--text-color);
 }
 
-.social-icon {
-    font-size: 24px;
-    margin-bottom: 10px;
+.social-items-container.active .social-item {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
 }
 
-.social-name {
-    font-weight: 500;
+.social-item .social-icon {
+    font-size: 18px;
+    margin: 0;
+}
+
+/* Position social items in a circle around the trigger */
+.social-item:nth-child(1) { /* GitHub */
+    --angle: 0deg;
+    top: calc(50% + 70px * sin(var(--angle)));
+    left: calc(50% + 70px * cos(var(--angle)));
+    transition-delay: 0.1s;
+}
+
+.social-item:nth-child(2) { /* LinkedIn */
+    --angle: 60deg;
+    top: calc(50% + 70px * sin(var(--angle)));
+    left: calc(50% + 70px * cos(var(--angle)));
+    transition-delay: 0.15s;
+}
+
+.social-item:nth-child(3) { /* Twitter */
+    --angle: 120deg;
+    top: calc(50% + 70px * sin(var(--angle)));
+    left: calc(50% + 70px * cos(var(--angle)));
+    transition-delay: 0.2s;
+}
+
+.social-item:nth-child(4) { /* Instagram */
+    --angle: 180deg;
+    top: calc(50% + 70px * sin(var(--angle)));
+    left: calc(50% + 70px * cos(var(--angle)));
+    transition-delay: 0.25s;
+}
+
+.social-item:nth-child(5) { /* YouTube */
+    --angle: 240deg;
+    top: calc(50% + 70px * sin(var(--angle)));
+    left: calc(50% + 70px * cos(var(--angle)));
+    transition-delay: 0.3s;
+}
+
+.social-item:nth-child(6) { /* Email */
+    --angle: 300deg;
+    top: calc(50% + 70px * sin(var(--angle)));
+    left: calc(50% + 70px * cos(var(--angle)));
+    transition-delay: 0.35s;
+}
+
+/* Legacy styles - keeping for backwards compatibility but hidden */
+.social-links-toggle {
+    display: none;
+}
+
+.social-links {
+    display: none;
+}
+
+.social-grid {
+    display: none;
 }
 
 /* Responsive adjustments */
@@ -230,10 +303,30 @@
     .about-content {
         margin: 30px 20px;
         padding: 20px;
+        max-width: none;
     }
     
-    .social-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .signature {
+        max-width: 160px;
+    }
+    
+    .about-bio {
+        margin-bottom: 25px;
+        line-height: 1.8;
+    }
+    
+    .about-bio .mission {
+        margin-bottom: 18px;
+    }
+    
+    .about-bio .current-work {
+        margin-top: 22px;
+    }
+    
+    .about-bio .mission h3,
+    .about-bio .current-work h3 {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
     }
     
     .about-bio .work-items {
@@ -241,21 +334,77 @@
         gap: 15px;
     }
     
-    .about-bio .mission h3,
-    .about-bio .current-work h3 {
-        font-size: 1.3rem;
+    .about-bio .work-item {
+        padding: 15px;
     }
     
     .about-bio .work-item h4 {
         font-size: 1.1rem;
+        margin-bottom: 8px;
+    }
+    
+    .about-bio .work-item p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+    
+    .social-links-container {
+        margin-top: 25px;
+        height: 80px;
+    }
+    
+    .social-circle-trigger {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .social-trigger-icon {
+        width: 18px;
+        height: 18px;
+    }
+    
+    /* Adjust circle radius for mobile */
+    .social-item:nth-child(1) { /* GitHub */
+        top: calc(50% + 60px * sin(var(--angle)));
+        left: calc(50% + 60px * cos(var(--angle)));
+    }
+    
+    .social-item:nth-child(2) { /* LinkedIn */
+        top: calc(50% + 60px * sin(var(--angle)));
+        left: calc(50% + 60px * cos(var(--angle)));
+    }
+    
+    .social-item:nth-child(3) { /* Twitter */
+        top: calc(50% + 60px * sin(var(--angle)));
+        left: calc(50% + 60px * cos(var(--angle)));
+    }
+    
+    .social-item:nth-child(4) { /* Instagram */
+        top: calc(50% + 60px * sin(var(--angle)));
+        left: calc(50% + 60px * cos(var(--angle)));
+    }
+    
+    .social-item:nth-child(5) { /* YouTube */
+        top: calc(50% + 60px * sin(var(--angle)));
+        left: calc(50% + 60px * cos(var(--angle)));
+    }
+    
+    .social-item:nth-child(6) { /* Email */
+        top: calc(50% + 60px * sin(var(--angle)));
+        left: calc(50% + 60px * cos(var(--angle)));
+    }
+    
+    .social-item {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .social-item .social-icon {
+        font-size: 16px;
     }
 }
 
 @media (max-width: 480px) {
-    .social-grid {
-        grid-template-columns: 1fr;
-    }
-    
     .about-content {
         margin: 20px 15px;
         padding: 15px;
@@ -267,5 +416,59 @@
     
     .about-bio {
         font-size: 0.95rem;
+    }
+    
+    .social-links-container {
+        height: 70px;
+    }
+    
+    .social-circle-trigger {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .social-trigger-icon {
+        width: 16px;
+        height: 16px;
+    }
+    
+    /* Smaller circle radius for small mobile */
+    .social-item:nth-child(1) { /* GitHub */
+        top: calc(50% + 50px * sin(var(--angle)));
+        left: calc(50% + 50px * cos(var(--angle)));
+    }
+    
+    .social-item:nth-child(2) { /* LinkedIn */
+        top: calc(50% + 50px * sin(var(--angle)));
+        left: calc(50% + 50px * cos(var(--angle)));
+    }
+    
+    .social-item:nth-child(3) { /* Twitter */
+        top: calc(50% + 50px * sin(var(--angle)));
+        left: calc(50% + 50px * cos(var(--angle)));
+    }
+    
+    .social-item:nth-child(4) { /* Instagram */
+        top: calc(50% + 50px * sin(var(--angle)));
+        left: calc(50% + 50px * cos(var(--angle)));
+    }
+    
+    .social-item:nth-child(5) { /* YouTube */
+        top: calc(50% + 50px * sin(var(--angle)));
+        left: calc(50% + 50px * cos(var(--angle)));
+    }
+    
+    .social-item:nth-child(6) { /* Email */
+        top: calc(50% + 50px * sin(var(--angle)));
+        left: calc(50% + 50px * cos(var(--angle)));
+    }
+    
+    .social-item {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .social-item .social-icon {
+        font-size: 14px;
     }
 }
