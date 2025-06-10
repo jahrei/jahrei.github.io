@@ -1,0 +1,14 @@
+{
+  "title": "jahrei@kairos",
+  "description": "A customized Gentoo Linux environment built for performance, development, and full creative control.",
+  "year": "2025–Present",
+  "category": "System Environment",
+  "status": "Planning",
+  "tags": ["Linux", "Gentoo", "Custom Environment", "Productivity"],
+  "gallery": [
+    "/assets/kairos-os/1.png",
+    "/assets/kairos-os/2.png",
+    "/assets/kairos-os/3.png"
+  ],
+  "details": "<p><strong>Kairos</strong> is a highly tuned Gentoo Linux environment designed for creative production, engineering work, and gaming. Every layer — from kernel to window manager — is optimized for clarity, performance, and modularity.</p><p><strong>System stack includes:</strong></p><ul><li>Gentoo Linux with Zen kernel patches and full LTO optimizations</li><li>Hyprland (Wayland) as the primary WM, riced from scratch</li><li>PipeWire + EasyEffects for precise audio routing</li><li>Zsh with custom scripts, aliases, and starship prompt</li><li>Tooling for embedded dev, AI inferencing, web dev, and automation</li><li>Gaming stack includes Steam (Proton), Wine, and native builds</li></ul><p><strong>Kairos</strong> isn’t just an OS install — it’s an evolving system environment tailored to how I work and think. Designed to support every project under Jahrei Labs while remaining fast, minimalist, and fully mine.</p><p><a href=\"https://jahrei.me/kairos-os\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"display:inline-block;padding:0.5em 1em;background:#000;color:#fff;border-radius:6px;text-decoration:none;margin-top:1rem;\">Experience Kairos (desktop only)</a></p>"
+}

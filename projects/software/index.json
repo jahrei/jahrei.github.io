@@ -3,7 +3,7 @@
     "projects": [
         "liftgear-website.json",
         "certfid.json",
-        "kairos-dashboard.json",
+        "kairos-os.json",
         "delabity.json",
         "ci-cd-pipelines.json"
     ]
