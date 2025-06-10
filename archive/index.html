@@ -64,6 +64,39 @@
             margin-bottom: 0.5rem;
         }
 
+        /* Concept explanation styles */
+        .concept-explanation {
+            padding: 2rem 0;
+            background-color: rgba(250, 250, 250, 0.8);
+            position: relative;
+            z-index: 1;
+        }
+
+        .explanation-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .explanation-content h3 {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-color);
+            font-weight: 400;
+        }
+
+        .explanation-content p {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--dark-gray);
+            margin-bottom: 1.2rem;
+            text-align: left;
+        }
+
+        .explanation-content p:last-child {
+            margin-bottom: 0;
+        }
+
         /* Wallpaper gallery styles */
         .wallpaper-section {
             padding: 3rem 0;
@@ -272,6 +305,17 @@
             </div>
         </section>
 
+        <section class="concept-explanation">
+            <div class="container">
+                <div class="explanation-content">
+                    <h3>the concept</h3>
+                    <p>deconstruction isn't destruction - it's creation in its own right. these wallpapers take apart the familiar visual language of computing, stripping away layers until what remains is both more and less than the original.</p>
+                    <p>when you remove color from windows xp's bliss, you don't destroy the rolling hills - you reveal the topology that made millions of people feel at home. when you add grain to macos ventura's waves, you're not degrading the image - you're adding the texture of time and memory.</p>
+                    <p>each piece here is an act of reconstruction through reduction. the goal is to find what survives when everything comfortable is taken away - and discover that what remains is often more powerful than what was lost.</p>
+                </div>
+            </div>
+        </section>
+
         <section class="wallpaper-section">
             <div class="container">
                 <div class="filter-section">
@@ -279,8 +323,6 @@
                         <button class="filter-btn active" data-filter="all">All Wallpapers</button>
                         <button class="filter-btn" data-filter="jahrei-labs">jahrei labs</button>
                         <button class="filter-btn" data-filter="eleventwentysix">eleventwentysix</button>
-                        <button class="filter-btn" data-filter="minimal">Minimal</button>
-                        <button class="filter-btn" data-filter="abstract">Abstract</button>
                     </div>
                 </div>
 
