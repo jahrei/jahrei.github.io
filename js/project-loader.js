@@ -573,15 +573,16 @@ class ProjectLoader {
 
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
-    // Get the category from the current page
-    const currentPage = window.location.pathname.split('/').pop();
+    // Get the category from the current page path
+    const currentPath = window.location.pathname;
     let category = '';
     
-    if (currentPage === 'hardware.html') {
+    // For clean URLs, check if we're in a category directory
+    if (currentPath.includes('/hardware/') || currentPath.endsWith('/hardware')) {
         category = 'hardware';
-    } else if (currentPage === 'software.html') {
+    } else if (currentPath.includes('/software/') || currentPath.endsWith('/software')) {
         category = 'software';
-    } else if (currentPage === 'embedded.html') {
+    } else if (currentPath.includes('/embedded/') || currentPath.endsWith('/embedded')) {
         category = 'embedded';
     }
     
