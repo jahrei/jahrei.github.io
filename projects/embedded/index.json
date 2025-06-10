@@ -2,7 +2,6 @@
     "category": "embedded",
     "projects": [
         "certfid-nfc.json",
-        "arduino-rhythm-controller.json",
-        "vintage-computers.json"
+        "iidx-controller.json"
     ]
 }
