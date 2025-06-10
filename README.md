@@ -8,7 +8,7 @@
 
 a minimalist, high-performance portfolio website built with vanilla HTML, CSS, and JavaScript, showcasing advanced frontend development skills and modern web standards. features dynamic project loading, sophisticated animations, and a fully responsive design system.
 
-**live site**: [https://jahrei.github.io](https://jahrei.github.io)
+**live site**: [https://jahrei.me](https://jahrei.me)
 
 ## table of contents
 
