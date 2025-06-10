@@ -22,15 +22,16 @@ html {
 }
 
 body {
-    font-family: var(--primary-font);
-    color: var(--text-color);
-    line-height: 1.6;
-    background-color: #ffffff;
-    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
     padding-top: 80px;
-    /* Prevent elastic scrolling on mobile that can affect fixed positioning */
-    -webkit-overflow-scrolling: touch;
-    /* Prevent mobile pull-to-refresh from affecting layout */
+    font-family: var(--primary-font);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: #ffffff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* Prevent elastic scrolling from affecting fixed navbar */
     overscroll-behavior-y: none;
 }
 
