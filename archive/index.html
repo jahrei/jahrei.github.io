@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>archive - jahrei labs</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/about-overlay.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Sticky navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        
+        /* Page header styles */
+        .page-header {
+            background-color: rgba(245, 245, 245, 0.7);
+            padding: 5rem 0 3rem;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--dark-gray);
+            font-size: 1.2rem;
+        }
+
+        .collaboration-info {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .collaboration-info h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent-color);
+        }
+
+        .collaboration-info p {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Wallpaper gallery styles */
+        .wallpaper-section {
+            padding: 3rem 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .wallpaper-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .wallpaper-card {
+            background-color: #ffffff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px var(--shadow-color);
+            transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+            position: relative;
+        }
+
+        .wallpaper-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .wallpaper-preview {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, var(--accent-color), #d0d5e0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 500;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .wallpaper-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .wallpaper-info {
+            padding: 1.5rem;
+        }
+
+        .wallpaper-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+
+        .wallpaper-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: var(--dark-gray);
+        }
+
+        .project-tag {
+            background-color: var(--light-gray);
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: var(--dark-gray);
+        }
+
+        .wallpaper-description {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .download-section {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .download-btn {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: background-color var(--transition-speed) ease;
+        }
+
+        .download-btn:hover {
+            background-color: #8b5cf6;
+            color: white;
+        }
+
+        .resolution-info {
+            font-size: 0.8rem;
+            color: var(--dark-gray);
+        }
+
+        /* Filter section */
+        .filter-section {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .filter-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .filter-btn {
+            background-color: var(--light-gray);
+            border: none;
+            padding: 0.5rem 1.5rem;
+            border-radius: 30px;
+            cursor: pointer;
+            font-family: var(--primary-font);
+            font-size: 0.9rem;
+            transition: all var(--transition-speed) ease;
+        }
+
+        .filter-btn:hover {
+            background-color: var(--medium-gray);
+        }
+
+        .filter-btn.active {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .wallpaper-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                gap: 1.5rem;
+            }
+
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .filter-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .filter-btn {
+                width: 100%;
+                max-width: 200px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .wallpaper-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .wallpaper-preview {
+                height: 200px;
+            }
+
+            .download-section {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="../index.html">jahrei labs</a>
+            </div>
+            <div class="nav-links">
+                <a href="../hardware/">Hardware</a>
+                <a href="../software/">Software</a>
+                <a href="../embedded/">Embedded</a>
+                <a href="../archive/" class="active">Archive</a>
+                <a href="#about">About</a>
+                <a href="../index.html#contact">Contact</a>
+            </div>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>archive</h1>
+                <p>a curated collection of wallpapers and digital artwork</p>
+                <p style="margin-top: 0.5rem; font-size: 1rem; color: var(--dark-gray);">made in collaboration with <strong>cherrybomb</strong> & <strong>eleventwentysix</strong></p>
+            </div>
+        </section>
+
+        <section class="wallpaper-section">
+            <div class="container">
+                <div class="filter-section">
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-filter="all">All Wallpapers</button>
+                        <button class="filter-btn" data-filter="jahrei-labs">jahrei labs</button>
+                        <button class="filter-btn" data-filter="eleventwentysix">eleventwentysix</button>
+                        <button class="filter-btn" data-filter="minimal">Minimal</button>
+                        <button class="filter-btn" data-filter="abstract">Abstract</button>
+                    </div>
+                </div>
+
+                <div class="wallpaper-grid" id="wallpaper-grid">
+                    <!-- OS Wallpaper Reimaginations -->
+                    <div class="wallpaper-card" data-category="jahrei-labs minimal">
+                        <div class="wallpaper-preview">
+                            <span>Preview Coming Soon</span>
+                        </div>
+                        <div class="wallpaper-info">
+                            <h3 class="wallpaper-title">Bliss Reimagined</h3>
+                            <div class="wallpaper-meta">
+                                <span class="project-tag">Windows XP</span>
+                                <span>January 2025</span>
+                            </div>
+                            <p class="wallpaper-description">The iconic Windows XP Bliss wallpaper transformed with jahrei labs' signature black and white grunge treatment, preserving the rolling hills while adding grainy texture.</p>
+                            <div class="download-section">
+                                <a href="#" class="download-btn">Download</a>
+                                <span class="resolution-info">Available in 4K, 2K, 1080p</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="wallpaper-card" data-category="jahrei-labs abstract">
+                        <div class="wallpaper-preview">
+                            <span>Preview Coming Soon</span>
+                        </div>
+                        <div class="wallpaper-info">
+                            <h3 class="wallpaper-title">Aurora Decay</h3>
+                            <div class="wallpaper-meta">
+                                <span class="project-tag">Windows Vista</span>
+                                <span>December 2024</span>
+                            </div>
+                            <p class="wallpaper-description">Vista's Aurora wallpaper reimagined with stark monochrome gradients and grunge textures, maintaining the ethereal flow while adding industrial grit.</p>
+                            <div class="download-section">
+                                <a href="#" class="download-btn">Download</a>
+                                <span class="resolution-info">Available in 4K, 2K, 1080p</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="wallpaper-card" data-category="jahrei-labs minimal">
+                        <div class="wallpaper-preview">
+                            <span>Preview Coming Soon</span>
+                        </div>
+                        <div class="wallpaper-info">
+                            <h3 class="wallpaper-title">Snow Leopard Static</h3>
+                            <div class="wallpaper-meta">
+                                <span class="project-tag">macOS Snow Leopard</span>
+                                <span>November 2024</span>
+                            </div>
+                            <p class="wallpaper-description">The serene Snow Leopard galaxy transformed into a grainy, monochromatic cosmic void while preserving the celestial beauty of the original.</p>
+                            <div class="download-section">
+                                <a href="#" class="download-btn">Download</a>
+                                <span class="resolution-info">Available in 4K, 2K, 1080p</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="wallpaper-card" data-category="eleventwentysix abstract">
+                        <div class="wallpaper-preview">
+                            <span>Preview Coming Soon</span>
+                        </div>
+                        <div class="wallpaper-info">
+                            <h3 class="wallpaper-title">iOS 7 Void</h3>
+                            <div class="wallpaper-meta">
+                                <span class="project-tag">iOS 7</span>
+                                <span>October 2024</span>
+                            </div>
+                            <p class="wallpaper-description">The colorful iOS 7 bubble wallpaper stripped to its essence - black and white spheres with heavy grain, creating an otherworldly minimalist landscape.</p>
+                            <div class="download-section">
+                                <a href="#" class="download-btn">Download</a>
+                                <span class="resolution-info">Available in 4K, 2K, 1080p</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="wallpaper-card" data-category="jahrei-labs abstract">
+                        <div class="wallpaper-preview">
+                            <span>Preview Coming Soon</span>
+                        </div>
+                        <div class="wallpaper-info">
+                            <h3 class="wallpaper-title">Ventura Monolith</h3>
+                            <div class="wallpaper-meta">
+                                <span class="project-tag">macOS Ventura</span>
+                                <span>September 2024</span>
+                            </div>
+                            <p class="wallpaper-description">Ventura's vibrant waves turned into stark, grainy monochrome formations - industrial beauty meeting natural flow in perfect discord.</p>
+                            <div class="download-section">
+                                <a href="#" class="download-btn">Download</a>
+                                <span class="resolution-info">Available in 4K, 2K, 1080p</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="wallpaper-card" data-category="eleventwentysix minimal">
+                        <div class="wallpaper-preview">
+                            <span>Preview Coming Soon</span>
+                        </div>
+                        <div class="wallpaper-info">
+                            <h3 class="wallpaper-title">Windows 7 Aura Decay</h3>
+                            <div class="wallpaper-meta">
+                                <span class="project-tag">Windows 7</span>
+                                <span>August 2024</span>
+                            </div>
+                            <p class="wallpaper-description">The Windows 7 default wallpaper's blue aura transformed into a haunting grayscale study, preserving the light rays while adding textural depth.</p>
+                            <div class="download-section">
+                                <a href="#" class="download-btn">Download</a>
+                                <span class="resolution-info">Available in 4K, 2K, 1080p</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="wallpaper-card" data-category="jahrei-labs abstract">
+                        <div class="wallpaper-preview">
+                            <span>Preview Coming Soon</span>
+                        </div>
+                        <div class="wallpaper-info">
+                            <h3 class="wallpaper-title">Mojave Dust</h3>
+                            <div class="wallpaper-meta">
+                                <span class="project-tag">macOS Mojave</span>
+                                <span>July 2024</span>
+                            </div>
+                            <p class="wallpaper-description">The warm Mojave desert dunes stripped of color and infused with gritty texture, creating a desolate yet beautiful monochromatic landscape.</p>
+                            <div class="download-section">
+                                <a href="#" class="download-btn">Download</a>
+                                <span class="resolution-info">Available in 4K, 2K, 1080p</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="wallpaper-card" data-category="eleventwentysix minimal">
+                        <div class="wallpaper-preview">
+                            <span>Preview Coming Soon</span>
+                        </div>
+                        <div class="wallpaper-info">
+                            <h3 class="wallpaper-title">Big Sur Static</h3>
+                            <div class="wallpaper-meta">
+                                <span class="project-tag">macOS Big Sur</span>
+                                <span>June 2024</span>
+                            </div>
+                            <p class="wallpaper-description">Big Sur's vibrant mountain peaks rendered in stark black and white with heavy grain, transforming the colorful vista into a dramatic monochrome study.</p>
+                            <div class="download-section">
+                                <a href="#" class="download-btn">Download</a>
+                                <span class="resolution-info">Available in 4K, 2K, 1080p</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="wallpaper-card" data-category="jahrei-labs abstract">
+                        <div class="wallpaper-preview">
+                            <span>Preview Coming Soon</span>
+                        </div>
+                        <div class="wallpaper-info">
+                            <h3 class="wallpaper-title">Windows 10 Hero Void</h3>
+                            <div class="wallpaper-meta">
+                                <span class="project-tag">Windows 10</span>
+                                <span>May 2024</span>
+                            </div>
+                            <p class="wallpaper-description">The Windows 10 Hero wallpaper's flowing light transformed into abstract grainy shadows, maintaining the dynamic movement while embracing darkness.</p>
+                            <div class="download-section">
+                                <a href="#" class="download-btn">Download</a>
+                                <span class="resolution-info">Available in 4K, 2K, 1080p</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="wallpaper-card" data-category="eleventwentysix minimal">
+                        <div class="wallpaper-preview">
+                            <span>Preview Coming Soon</span>
+                        </div>
+                        <div class="wallpaper-info">
+                            <h3 class="wallpaper-title">Catalina Noir</h3>
+                            <div class="wallpaper-meta">
+                                <span class="project-tag">macOS Catalina</span>
+                                <span>April 2024</span>
+                            </div>
+                            <p class="wallpaper-description">Catalina's island paradise stripped to its essence - black volcanic rock against grainy white sky, capturing the rugged beauty in monochrome.</p>
+                            <div class="download-section">
+                                <a href="#" class="download-btn">Download</a>
+                                <span class="resolution-info">Available in 4K, 2K, 1080p</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="wallpaper-card" data-category="jahrei-labs abstract">
+                        <div class="wallpaper-preview">
+                            <span>Preview Coming Soon</span>
+                        </div>
+                        <div class="wallpaper-info">
+                            <h3 class="wallpaper-title">iOS 14 Geometry</h3>
+                            <div class="wallpaper-meta">
+                                <span class="project-tag">iOS 14</span>
+                                <span>March 2024</span>
+                            </div>
+                            <p class="wallpaper-description">iOS 14's abstract geometric patterns reimagined as stark, grainy shapes floating in void - digital minimalism meets industrial texture.</p>
+                            <div class="download-section">
+                                <a href="#" class="download-btn">Download</a>
+                                <span class="resolution-info">Available in 4K, 2K, 1080p</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="wallpaper-card" data-category="eleventwentysix abstract">
+                        <div class="wallpaper-preview">
+                            <span>Preview Coming Soon</span>
+                        </div>
+                        <div class="wallpaper-info">
+                            <h3 class="wallpaper-title">Windows 11 Bloom Decay</h3>
+                            <div class="wallpaper-meta">
+                                <span class="project-tag">Windows 11</span>
+                                <span>February 2024</span>
+                            </div>
+                            <p class="wallpaper-description">Windows 11's soft bloom wallpaper transformed into a harsh, grainy study of light and shadow - organic curves meet digital degradation.</p>
+                            <div class="download-section">
+                                <a href="#" class="download-btn">Download</a>
+                                <span class="resolution-info">Available in 4K, 2K, 1080p</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="wallpaper-card" data-category="jahrei-labs minimal">
+                        <div class="wallpaper-preview">
+                            <span>Preview Coming Soon</span>
+                        </div>
+                        <div class="wallpaper-info">
+                            <h3 class="wallpaper-title">Ubuntu Orange Void</h3>
+                            <div class="wallpaper-meta">
+                                <span class="project-tag">Ubuntu</span>
+                                <span>January 2024</span>
+                            </div>
+                            <p class="wallpaper-description">Ubuntu's warm orange gradient stripped to monochrome perfection, maintaining the gentle curves while adding heavy grain and contrast.</p>
+                            <div class="download-section">
+                                <a href="#" class="download-btn">Download</a>
+                                <span class="resolution-info">Available in 4K, 2K, 1080p</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="wallpaper-card" data-category="eleventwentysix abstract">
+                        <div class="wallpaper-preview">
+                            <span>Preview Coming Soon</span>
+                        </div>
+                        <div class="wallpaper-info">
+                            <h3 class="wallpaper-title">Monterey Waves Static</h3>
+                            <div class="wallpaper-meta">
+                                <span class="project-tag">macOS Monterey</span>
+                                <span>December 2023</span>
+                            </div>
+                            <p class="wallpaper-description">Monterey's flowing waves frozen in time and stripped of color, creating a haunting seascape where motion meets stillness in grainy perfection.</p>
+                            <div class="download-section">
+                                <a href="#" class="download-btn">Download</a>
+                                <span class="resolution-info">Available in 4K, 2K, 1080p</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="wallpaper-card" data-category="jahrei-labs minimal">
+                        <div class="wallpaper-preview">
+                            <span>Preview Coming Soon</span>
+                        </div>
+                        <div class="wallpaper-info">
+                            <h3 class="wallpaper-title">iOS 16 Lock Screen Decay</h3>
+                            <div class="wallpaper-meta">
+                                <span class="project-tag">iOS 16</span>
+                                <span>November 2023</span>
+                            </div>
+                            <p class="wallpaper-description">iOS 16's dynamic lock screen wallpapers reimagined as static, grainy compositions - the vibrancy replaced with stark industrial beauty.</p>
+                            <div class="download-section">
+                                <a href="#" class="download-btn">Download</a>
+                                <span class="resolution-info">Available in 4K, 2K, 1080p</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 jahrei labs. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/about-overlay.js"></script>
+    <script>
+        // Filter functionality for wallpapers
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const wallpaperCards = document.querySelectorAll('.wallpaper-card');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    this.classList.add('active');
+
+                    const filter = this.getAttribute('data-filter');
+
+                    wallpaperCards.forEach(card => {
+                        if (filter === 'all') {
+                            card.style.display = 'block';
+                        } else {
+                            const categories = card.getAttribute('data-category');
+                            if (categories && categories.includes(filter)) {
+                                card.style.display = 'block';
+                            } else {
+                                card.style.display = 'none';
+                            }
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html> 
