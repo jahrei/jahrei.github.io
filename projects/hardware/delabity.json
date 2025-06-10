@@ -7,9 +7,9 @@
     "order": 1,
     "tags": ["PC Build", "Linux", "Server", "Virtualization", "Docker"],
     "gallery": [
-        "/assets/delabity/placeholder1.jpg",
-        "/assets/delabity/placeholder2.jpg",
-        "/assets/delabity/placeholder3.jpg"
+        "/assets/delabity/1.png",
+        "/assets/delabity/2.jpg",
+        "/assets/delabity/3.jpg"
     ],
     "details": "<p>System specifications:</p><ul><li>AMD Ryzen 5 5600X (6-core/12-thread)</li><li>ASUS TUF B650X Motherboard</li><li>32GB DDR4-3200 RAM</li><li>3TB HDD (hosting Chronos VM)</li><li>128GB SSD (for VM)</li><li>AlmaLinux with virtualization support</li></ul><p>This build serves as my home server running multiple virtual machines and Docker containers for various services and development environments.</p>"
 }

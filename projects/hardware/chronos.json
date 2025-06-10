@@ -1,7 +1,7 @@
 {
     "title": "Chronos",
-    "description": "My first ever PC build, a milestone in my hardware journey.",
-    "year": "2020",
+    "description": "My first ever PC build",
+    "year": "2015-2020",
     "category": "PC Build",
     "status": "Completed",
     "order": 5,
@@ -10,7 +10,8 @@
         "/assets/chronos/1.png",
         "/assets/chronos/2.png",
         "/assets/chronos/3.png",
-        "/assets/chronos/4.png"
+        "/assets/chronos/4.png",
+        "/assets/chronos/5.png"
     ],
-    "details": "<p>My first custom PC build, marking the beginning of my hardware journey. This system taught me the fundamentals of computer hardware assembly and troubleshooting.</p><p>While the specific components have been repurposed for other projects, this build represents an important milestone in my technical development.</p>"
+    "details": "<p>My first custom PC build, marking the beginning of my hardware journey. This system taught me the fundamentals of computer hardware assembly and troubleshooting.</p><p>While the specific components have been repurposed for other projects, this build represents an important milestone in my technical development.</p><p>System specifications:</p><ul><li>CPU: AMD FX-6300 3.5GHz(6c)</li><li>RAM: 24GB DDR3-1600MHz</li><li>GPU: Asus ROG Strix GeForce GTX 960 2GB</li><li>3TB HDD</li><li>Case: Corsair Carbide Series SPEC-01</li><li>OS: Windows 10 Home</li></ul>"
 }
