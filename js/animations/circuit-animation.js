@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.body.insertBefore(svgContainer, document.body.firstChild);
     
     // Fetch the circuit.txt file
-    fetch('circuit.txt')
+    fetch('/js/animations/circuit.txt')
         .then(response => response.text())
         .then(svgText => {
             // Modify the SVG content to use black color instead of blue gradient
