@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows XP Recreation - jahrei labs</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 3rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            max-width: 600px;
+        }
+        h1 {
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            font-weight: 300;
+        }
+        p {
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+        .buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+        }
+        .btn-primary {
+            background: #0066ff;
+            border-color: #0066ff;
+        }
+        .btn-primary:hover {
+            background: #0052cc;
+        }
+        .note {
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+        .hosted-badge {
+            background: rgba(0, 255, 0, 0.2);
+            border: 1px solid rgba(0, 255, 0, 0.4);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-left: 8px;
+            color: #90EE90;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🖥️ Windows XP Recreation</h1>
+        <p>Experience a faithful recreation of Windows XP in your browser! This project features drag-and-drop windows, classic applications like Minesweeper, Notepad, Paint, Winamp, and authentic XP visuals.</p>
+        
+        <div class="buttons">
+            <a href="HALCYON_EYES/" class="btn btn-primary">
+                🚀 Launch Windows XP <span class="hosted-badge">Hosted Here</span>
+            </a>
+            <a href="https://github.com/ShizukuIchi/winXP" class="btn" target="_blank">
+                📁 View Source Code
+            </a>
+            <a href="https://winxp.now.sh" class="btn" target="_blank">
+                🌐 Original Demo
+            </a>
+            <a href="index.html" class="btn">
+                ← Back to jahrei labs
+            </a>
+        </div>
+        
+        <div class="note">
+            <p>Based on the excellent <a href="https://github.com/ShizukuIchi/winXP" style="color: #87ceeb;">ShizukuIchi/winXP</a> project.<br>
+            The Windows XP name and artwork are property of Microsoft.</p>
+        </div>
+    </div>
+
+    <script>
+        // Add some subtle interactivity
+        document.addEventListener('DOMContentLoaded', function() {
+            const container = document.querySelector('.container');
+            container.style.opacity = '0';
+            container.style.transform = 'translateY(20px)';
+            
+            setTimeout(() => {
+                container.style.transition = 'all 0.8s ease';
+                container.style.opacity = '1';
+                container.style.transform = 'translateY(0)';
+            }, 100);
+        });
+    </script>
+</body>
+</html> 
