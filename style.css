@@ -28,6 +28,10 @@ body {
     background-color: #ffffff;
     overflow-x: hidden;
     padding-top: 80px;
+    /* Prevent elastic scrolling on mobile that can affect fixed positioning */
+    -webkit-overflow-scrolling: touch;
+    /* Prevent mobile pull-to-refresh from affecting layout */
+    overscroll-behavior-y: none;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -90,6 +94,10 @@ section {
     transition: all var(--transition-speed) ease;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
+    /* Ensure navbar stays fixed on all mobile browsers */
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    will-change: transform;
 }
 
 .logo a {
@@ -349,6 +357,15 @@ footer {
 @media (max-width: 768px) {
     .navbar {
         padding: 1rem;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
     }
 
     .nav-links {
@@ -359,11 +376,14 @@ footer {
         background-color: #ffffff;
         width: 80%;
         height: calc(100vh - 70px);
+        height: calc(100dvh - 70px);
         padding: 2rem;
         box-shadow: -5px 0 10px var(--shadow-color);
         transition: right var(--transition-speed) ease;
         gap: 1.5rem;
         align-items: center;
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
     }
 
     .nav-links.active {
