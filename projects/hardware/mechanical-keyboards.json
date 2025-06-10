@@ -7,7 +7,10 @@
   "order": 2,
   "tags": ["Keyboards", "Custom Hardware", "Firmware"],
   "gallery": [
-    "/assets/mechanical-keyboards/akko pc75b.mp4"
+    "/assets/mechanical-keyboards/akko pc75b.mp4",
+    "/assets/mechanical-keyboards/rainy_1.png",
+    "/assets/mechanical-keyboards/akko_1.png",
+    "/assets/mechanical-keyboards/various_1.png"
   ],
   "details": "<p>Keyboard projects include:</p><ul><li>Rainy75 Standard with JWK switches – current daily driver, aesthetic-focused build</li><li>Akko PC75B Plus with Kang White V3 switches – portable 75% board for office use</li><li>Custom Ergo Clears build – tactile-focused, possibly future main</li><li>GMK67 linear build – in progress, white-on-white theme with unknown switch config</li><li>Flesports OG87/98 with Kailh Icy switches – entry-level linear board</li><li>HyperX Alloy Core Origins – rhythm gaming keyboard (TRIDENT)</li><li>Varmilo VA87M “Yakumo” with MX Blacks – retired TKL build</li><li>MX Browns/variant build – tactile experiment build in progress</li><li>Vintage restorations: IBM Model M and Apple Extended Keyboard II (Alps)</li></ul><p>Each keyboard is tuned for a different workflow — from daily typing and programming, to rhythm gaming and mobile use. Modifications include switch lubing, case dampening, layout customization, and Bluetooth retrofitting for legacy hardware.</p>"
 }
