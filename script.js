@@ -47,26 +47,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Navbar scroll behavior
     const navbar = document.querySelector('.navbar');
-    let lastScrollTop = 0;
 
     window.addEventListener('scroll', function() {
         let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         
-        if (scrollTop > lastScrollTop && scrollTop > 100) {
-            // Scrolling down
-            navbar.style.transform = 'translateY(-100%)';
-        } else {
-            // Scrolling up
-            navbar.style.transform = 'translateY(0)';
-        }
-        
-        // Add shadow when scrolled
+        // Add enhanced styling when scrolled
         if (scrollTop > 10) {
-            navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.15)';
+            navbar.style.backdropFilter = 'blur(20px)';
+            navbar.style.webkitBackdropFilter = 'blur(20px)';
+            navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.9)';
         } else {
             navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.05)';
+            navbar.style.backdropFilter = 'blur(10px)';
+            navbar.style.webkitBackdropFilter = 'blur(10px)';
+            navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
         }
-        
-        lastScrollTop = scrollTop;
     });
 });

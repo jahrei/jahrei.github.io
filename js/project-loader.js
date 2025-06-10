@@ -169,6 +169,11 @@ class ProjectLoader {
         projectCard.className = 'project-card';
         projectCard.dataset.projectId = project.filename;
         
+        // Add special glow effect for the jahrei.me website project
+        if (project.title === 'jahrei.me Portfolio Website') {
+            projectCard.classList.add('featured-project');
+        }
+        
         // Add data tags for filtering (software page)
         if (project.tags && project.tags.length > 0) {
             projectCard.dataset.tags = project.tags.join(',');
@@ -348,11 +353,43 @@ class ProjectLoader {
         mainImage.src = project.gallery[0];
         mainImage.alt = project.title;
         
+        // Handle image loading and dynamic resizing
+        mainImage.onload = function() {
+            // Calculate aspect ratio and adjust gallery width
+            const aspectRatio = this.naturalWidth / this.naturalHeight;
+            
+            // Determine optimal width based on aspect ratio
+            let optimalWidth;
+            if (aspectRatio > 2.0) {
+                // Very wide image - moderate increase
+                optimalWidth = Math.min(65, Math.max(45, aspectRatio * 25));
+            } else if (aspectRatio > 1.3) {
+                // Wide image - slight increase
+                optimalWidth = Math.min(60, Math.max(45, aspectRatio * 30));
+            } else if (aspectRatio < 0.6) {
+                // Very tall image - give less space
+                optimalWidth = Math.min(40, Math.max(30, aspectRatio * 65));
+            } else if (aspectRatio < 0.8) {
+                // Tall image - give less space
+                optimalWidth = Math.min(45, Math.max(35, aspectRatio * 55));
+            } else {
+                // Square-ish image - balanced
+                optimalWidth = Math.min(55, Math.max(40, aspectRatio * 45));
+            }
+            
+            galleryContainer.style.flexBasis = `${optimalWidth}%`;
+            galleryContainer.style.maxWidth = `${optimalWidth}%`;
+        };
+        
         // Handle image loading error
         mainImage.onerror = function() {
             // Replace with a placeholder or default image
             this.src = '/assets/placeholder.jpg';
             this.onerror = null; // Prevent infinite loop if placeholder also fails
+            
+            // Reset to default sizing on error
+            galleryContainer.style.flexBasis = '50%';
+            galleryContainer.style.maxWidth = '50%';
         };
         
         // Create thumbnails
@@ -376,6 +413,28 @@ class ProjectLoader {
                     // Update main image
                     mainImage.src = img;
                     
+                    // Add dynamic resizing for this image too
+                    mainImage.onload = function() {
+                        const aspectRatio = this.naturalWidth / this.naturalHeight;
+                        const galleryContainer = document.querySelector('.project-expanded-gallery');
+                        
+                        let optimalWidth;
+                        if (aspectRatio > 2.0) {
+                            optimalWidth = Math.min(65, Math.max(45, aspectRatio * 25));
+                        } else if (aspectRatio > 1.3) {
+                            optimalWidth = Math.min(60, Math.max(45, aspectRatio * 30));
+                        } else if (aspectRatio < 0.6) {
+                            optimalWidth = Math.min(40, Math.max(30, aspectRatio * 65));
+                        } else if (aspectRatio < 0.8) {
+                            optimalWidth = Math.min(45, Math.max(35, aspectRatio * 55));
+                        } else {
+                            optimalWidth = Math.min(55, Math.max(40, aspectRatio * 45));
+                        }
+                        
+                        galleryContainer.style.flexBasis = `${optimalWidth}%`;
+                        galleryContainer.style.maxWidth = `${optimalWidth}%`;
+                    };
+                    
                     // Update active thumbnail
                     thumbnailsContainer.querySelectorAll('.project-expanded-thumbnail').forEach(thumb => {
                         thumb.classList.remove('active');
@@ -385,7 +444,11 @@ class ProjectLoader {
                 
                 thumbnailsContainer.appendChild(thumbnail);
             });
+            
+            // Show thumbnails
+            thumbnailsContainer.style.display = 'flex';
         } else {
+            // Hide thumbnails completely for single images
             thumbnailsContainer.style.display = 'none';
         }
         

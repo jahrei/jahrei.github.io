@@ -1,9 +1,9 @@
 {
   "title": "Glacier",
   "description": "My retrofitted ThinkPad T480 designed for portability, hacking, and field development work.",
-  "year": "2019",
+  "year": "2025-Present",
   "category": "ThinkPad / Portable Workstation",
-  "status": "Active",
+  "status": "Planning",
   "order": 3,
   "tags": ["ThinkPad", "Linux", "Portable", "Dev Machine"],
   "gallery": [

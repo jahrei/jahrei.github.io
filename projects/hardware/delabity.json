@@ -1,9 +1,9 @@
 {
-    "title": "Delabity",
+    "title": "delabity",
     "description": "My server PC running AlmaLinux with several VMs and Docker containers.",
     "year": "2023",
     "category": "Server Build",
-    "status": "Completed",
+    "status": "In Progress",
     "order": 1,
     "tags": ["PC Build", "Linux", "Server", "Virtualization", "Docker"],
     "gallery": [

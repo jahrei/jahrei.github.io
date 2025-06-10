@@ -1,6 +1,7 @@
 {
     "category": "software",
     "projects": [
+        "jahrei-me-website.json",
         "liftgear-website.json",
         "certfid.json",
         "kairos-os.json",
