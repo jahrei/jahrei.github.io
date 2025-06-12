@@ -219,6 +219,42 @@
             transform: translateY(-15px);
             animation-duration: 2s;
         }
+        
+        /* Monochrome styling for Serenity project */
+        .monochrome-project {
+            background-color: #000 !important;
+            color: #fff !important;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            position: relative;
+            border: 1px solid #333;
+            z-index: 1;
+        }
+        
+        .monochrome-project h3,
+        .monochrome-project p,
+        .monochrome-project .project-meta span {
+            color: #fff !important;
+        }
+        
+        .monochrome-project .project-tag {
+            background-color: #333 !important;
+            color: #fff !important;
+        }
+        
+        .monochrome-project .project-status {
+            background-color: #fff !important;
+            color: #000 !important;
+        }
+        
+        .monochrome-project .project-image {
+            background-color: #333 !important;
+            color: #fff !important;
+        }
+        
+        .monochrome-project:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
+        }
 
         @keyframes loadGlow {
             0% {
@@ -370,5 +406,6 @@
     <script src="../js/about-overlay.js"></script>
     <script src="../js/project-gallery.js"></script>
     <script src="../js/project-loader.js"></script>
+    <script src="../js/animations/matrix-animation.js"></script>
 </body>
 </html>

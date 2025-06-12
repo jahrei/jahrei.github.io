@@ -4,11 +4,10 @@
   "year": "2025",
   "category": "Custom Input Hardware",
   "status": "In Progress",
-  "order": 4,
+  "order": 1,
   "tags": ["IIDX", "Rhythm Games", "Custom Controller", "Hardware"],
   "gallery": [
-    "/assets/iidx-controller/1.png",
-    "/assets/iidx-controller/2.png"
+    "/assets/jl-placeholder.png"
   ],
-  "details": "<p>This custom IIDX controller is built to replicate the feel of arcade cabinets like the Konami Arcade Style Controller (ASC) and DAO FPS. The build includes:</p><ul><li>Samduck buttons, Omron switches, -- Springs</li><li>Custom 3D Printed turntable with high-resolution optical encoder</li><li>Arduino Microcontroller</li><li>LED lighting integration and clear acrylic casing</li><li>3D-printed spacers, brackets, and housings designed in Fusion 360</li><li>Neat internal routing for modular disassembly and part replacement</li></ul><p>This controller is designed for use with PC rhythm games including beatoraja and LR2. All electronics and casework were prototyped, iterated, and assembled manually.</p><p>Used by player zenith under the TRIDENT branch of 1126.</p>"
+  "details": "<p>Based on <a href=\"https://github.com/thomasstar/GJ-Tho-Modular-V2\">https://github.com/thomasstar/GJ-Tho-Modular-V2</a>, this custom IIDX controller is built to replicate the feel of arcade cabinets like the Konami Arcade Style Controller (ASC) and DAO FPS. The build includes:</p><ul><li>Samduck buttons, Omron switches, -- Springs</li><li>Custom 3D Printed turntable with high-resolution optical encoder</li><li>Arduino Microcontroller</li><li>LED lighting integration and clear acrylic casing</li><li>3D-printed spacers, brackets, and housings designed in Fusion 360</li><li>Neat internal routing for modular disassembly and part replacement</li></ul><p>This controller is designed for use with PC rhythm games including beatoraja and LR2. All electronics and casework were prototyped, iterated, and assembled manually.</p><p>Used by player zenith under the TRIDENT branch of 1126.</p>"
 }

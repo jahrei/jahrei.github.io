@@ -103,12 +103,18 @@
             position: relative;
             z-index: 1;
         }
+        
+        .wallpaper-section .container {
+            max-width: 1400px;
+            width: 95%;
+        }
 
         .wallpaper-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 1.5rem;
             margin-top: 2rem;
+            width: 100%;
         }
 
         .wallpaper-card {
@@ -118,6 +124,10 @@
             box-shadow: 0 5px 15px var(--shadow-color);
             transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
             position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
         }
 
         .wallpaper-card:hover {
@@ -146,6 +156,9 @@
 
         .wallpaper-info {
             padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
 
         .wallpaper-title {
@@ -184,7 +197,7 @@
 
         .download-btn {
             background-color: var(--accent-color);
-            color: white;
+            color: black;
             padding: 0.5rem 1rem;
             border-radius: 25px;
             text-decoration: none;
@@ -194,7 +207,7 @@
 
         .download-btn:hover {
             background-color: #8b5cf6;
-            color: white;
+            color: black;
         }
 
         .resolution-info {
@@ -236,11 +249,25 @@
         }
 
         /* Responsive design */
-        @media (max-width: 768px) {
+        @media (max-width: 1200px) {
             .wallpaper-grid {
-                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                grid-template-columns: repeat(3, minmax(0, 1fr));
                 gap: 1.5rem;
             }
+            
+            .wallpaper-section .container {
+                max-width: 1200px;
+            }
+        }
+        
+        @media (max-width: 900px) {
+            .wallpaper-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
 
             .page-header h1 {
                 font-size: 2.5rem;
@@ -271,6 +298,78 @@
                 align-items: flex-start;
                 gap: 0.5rem;
             }
+        }
+
+        /* Lightbox styles */
+        .gallery-lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1100;
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .lightbox-image-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox-image {
+            max-width: 100%;
+            max-height: 80vh;
+            object-fit: contain;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            z-index: 1101;
+        }
+
+        .lightbox-caption {
+            color: white;
+            margin-top: 1rem;
+            font-size: 1.2rem;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        /* Make wallpaper previews show a pointer cursor to indicate they're clickable */
+        .wallpaper-preview {
+            cursor: pointer;
+        }
+
+        .resolution-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-family: monospace;
+            z-index: 10;
         }
     </style>
 </head>
@@ -323,277 +422,225 @@
                         <button class="filter-btn active" data-filter="all">All Wallpapers</button>
                         <button class="filter-btn" data-filter="jahrei-labs">jahrei labs</button>
                         <button class="filter-btn" data-filter="eleventwentysix">eleventwentysix</button>
+                        <button class="filter-btn" data-filter="orion">Used on Orion</button>
+                        <button class="filter-btn" data-filter="macos">Used on macOS</button>
                     </div>
                 </div>
 
                 <div class="wallpaper-grid" id="wallpaper-grid">
-                    <!-- OS Wallpaper Reimaginations -->
-                    <div class="wallpaper-card" data-category="jahrei-labs minimal">
+                    <!-- Dark Bliss - Windows XP -->
+                    <div class="wallpaper-card" data-category="jahrei-labs minimal orion">
                         <div class="wallpaper-preview">
-                            <span>Preview Coming Soon</span>
+                            <img src="../assets/wallpapers/dark bliss.jpg" alt="Dark Bliss">
+                            <div class="resolution-badge">1920 × 1080</div>
                         </div>
                         <div class="wallpaper-info">
-                            <h3 class="wallpaper-title">Bliss Reimagined</h3>
+                            <h3 class="wallpaper-title">dark bliss</h3>
                             <div class="wallpaper-meta">
                                 <span class="project-tag">Windows XP</span>
-                                <span>January 2025</span>
+                                <span>2023</span>
                             </div>
-                            <p class="wallpaper-description">The iconic Windows XP Bliss wallpaper transformed with jahrei labs' signature black and white grunge treatment, preserving the rolling hills while adding grainy texture.</p>
+                            <!-- <p class="wallpaper-description">the iconic Windows XP bliss wallpaper transformed into a haunting nocturnal landscape, preserving the rolling hills while adding depth through darkness.</p> -->
                             <div class="download-section">
-                                <a href="#" class="download-btn">Download</a>
-                                <span class="resolution-info">Available in 4K, 2K, 1080p</span>
+                                <a href="../assets/wallpapers/dark bliss.jpg" class="download-btn" download>Download</a>
+                                <span class="resolution-info">1920 × 1080 | JPG Format</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="wallpaper-card" data-category="jahrei-labs abstract">
+                    <!-- Delabity Background -->
+                    <div class="wallpaper-card" data-category="jahrei-labs abstract orion">
                         <div class="wallpaper-preview">
-                            <span>Preview Coming Soon</span>
+                            <img src="../assets/wallpapers/JAHREI LABS - delabity background v1.png" alt="Delabity Background">
+                            <div class="resolution-badge">3840 × 2160</div>
                         </div>
                         <div class="wallpaper-info">
-                            <h3 class="wallpaper-title">Aurora Decay</h3>
+                            <h3 class="wallpaper-title">delabity laboratory</h3>
                             <div class="wallpaper-meta">
-                                <span class="project-tag">Windows Vista</span>
-                                <span>December 2024</span>
+                                <span class="project-tag">delabity</span>
+                                <span>2023</span>
                             </div>
-                            <p class="wallpaper-description">Vista's Aurora wallpaper reimagined with stark monochrome gradients and grunge textures, maintaining the ethereal flow while adding industrial grit.</p>
+                            <!-- <p class="wallpaper-description">inspired by the EXTRA STAGE of beatmania IIDX 26 Rootage, this wallpaper captures the essence of the delabity laboratory in stark monochrome.</p> -->
                             <div class="download-section">
-                                <a href="#" class="download-btn">Download</a>
-                                <span class="resolution-info">Available in 4K, 2K, 1080p</span>
+                                <a href="../assets/wallpapers/JAHREI LABS - delabity background v1.png" class="download-btn" download>Download</a>
+                                <span class="resolution-info">3840 × 2160 | PNG Format</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="wallpaper-card" data-category="jahrei-labs minimal">
+                    <!-- Orion II Golden Age Dark -->
+                    <div class="wallpaper-card" data-category="jahrei-labs minimal orion">
                         <div class="wallpaper-preview">
-                            <span>Preview Coming Soon</span>
+                            <img src="../assets/wallpapers/JAHREI LABS - Orion II wallpaper v5 GOLDEN AGE II Homage-v3.png" alt="Orion II Golden Age Dark">
+                            <div class="resolution-badge">3840 × 2160</div>
                         </div>
                         <div class="wallpaper-info">
-                            <h3 class="wallpaper-title">Snow Leopard Static</h3>
+                            <h3 class="wallpaper-title">orion II golden age - dark</h3>
                             <div class="wallpaper-meta">
-                                <span class="project-tag">macOS Snow Leopard</span>
-                                <span>November 2024</span>
+                                <span class="project-tag">Windows 8.1</span>
+                                <span>2023</span>
                             </div>
-                            <p class="wallpaper-description">The serene Snow Leopard galaxy transformed into a grainy, monochromatic cosmic void while preserving the celestial beauty of the original.</p>
+                            <!-- <p class="wallpaper-description">the Windows 8.1 default wallpaper reimagined in complete darkness, a stark interpretation that embraces the void while preserving subtle detail.</p> -->
                             <div class="download-section">
-                                <a href="#" class="download-btn">Download</a>
-                                <span class="resolution-info">Available in 4K, 2K, 1080p</span>
+                                <a href="../assets/wallpapers/JAHREI LABS - Orion II wallpaper v5 GOLDEN AGE II Homage-v3.png" class="download-btn" download>Download</a>
+                                <span class="resolution-info">PNG Format</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="wallpaper-card" data-category="eleventwentysix abstract">
+                    <!-- Orion II Golden Age v1 -->
+                    <div class="wallpaper-card" data-category="jahrei-labs abstract orion">
                         <div class="wallpaper-preview">
-                            <span>Preview Coming Soon</span>
+                            <img src="../assets/wallpapers/JAHREI LABS - Orion II wallpaper v5 GOLDEN AGE II Homage-v1.png" alt="Orion II Golden Age v1">
+                            <div class="resolution-badge">3840 × 2160</div>
                         </div>
                         <div class="wallpaper-info">
-                            <h3 class="wallpaper-title">iOS 7 Void</h3>
+                            <h3 class="wallpaper-title">orion II golden age - v1</h3>
                             <div class="wallpaper-meta">
-                                <span class="project-tag">iOS 7</span>
-                                <span>October 2024</span>
+                                <span class="project-tag">Windows 8.1</span>
+                                <span>2023</span>
                             </div>
-                            <p class="wallpaper-description">The colorful iOS 7 bubble wallpaper stripped to its essence - black and white spheres with heavy grain, creating an otherworldly minimalist landscape.</p>
+                            <!-- <p class="wallpaper-description">windows 8.1 default wallpaper with splashes of original orange color, creating a perfect balance between darkness and vibrant energy.</p> -->
                             <div class="download-section">
-                                <a href="#" class="download-btn">Download</a>
-                                <span class="resolution-info">Available in 4K, 2K, 1080p</span>
+                                <a href="../assets/wallpapers/JAHREI LABS - Orion II wallpaper v5 GOLDEN AGE II Homage-v1.png" class="download-btn" download>Download</a>
+                                <span class="resolution-info">PNG Format</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="wallpaper-card" data-category="jahrei-labs abstract">
+                    <!-- Wakizashi Sonoma -->
+                    <div class="wallpaper-card" data-category="jahrei-labs minimal macos">
                         <div class="wallpaper-preview">
-                            <span>Preview Coming Soon</span>
+                            <img src="../assets/wallpapers/JAHREI LABS - wakzashi wallpaper ver 4 Sonoma edit.png" alt="Wakizashi Sonoma">
+                            <div class="resolution-badge">3456 × 2234</div>
                         </div>
                         <div class="wallpaper-info">
-                            <h3 class="wallpaper-title">Ventura Monolith</h3>
+                            <h3 class="wallpaper-title">wakizashi sonoma</h3>
+                            <div class="wallpaper-meta">
+                                <span class="project-tag">macOS Sonoma</span>
+                                <span>2023</span>
+                            </div>
+                            <!-- <p class="wallpaper-description">a stark reinterpretation for macOS Sonoma, this wakizashi-inspired design embraces minimalism through high contrast and precise geometric forms.</p> -->
+                            <div class="download-section">
+                                <a href="../assets/wallpapers/JAHREI LABS - wakzashi wallpaper ver 4 Sonoma edit.png" class="download-btn" download>Download</a>
+                                <span class="resolution-info">3456 × 2234 | PNG Format</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Wakizashi Ventura -->
+                    <div class="wallpaper-card" data-category="jahrei-labs minimal macos">
+                        <div class="wallpaper-preview">
+                            <img src="../assets/wallpapers/JAHREI LABS - wakzashi wallpaper ver 4 ventura actual res MODERN LOGO.png" alt="Wakizashi Ventura">
+                            <div class="resolution-badge">3456 × 2234</div>
+                        </div>
+                        <div class="wallpaper-info">
+                            <h3 class="wallpaper-title">wakizashi ventura</h3>
                             <div class="wallpaper-meta">
                                 <span class="project-tag">macOS Ventura</span>
-                                <span>September 2024</span>
+                                <span>2023</span>
                             </div>
-                            <p class="wallpaper-description">Ventura's vibrant waves turned into stark, grainy monochrome formations - industrial beauty meeting natural flow in perfect discord.</p>
+                            <!-- <p class="wallpaper-description">created for macOS Ventura, this wallpaper draws inspiration from traditional Japanese weaponry while expressing it through digital minimalism.</p> -->
                             <div class="download-section">
-                                <a href="#" class="download-btn">Download</a>
-                                <span class="resolution-info">Available in 4K, 2K, 1080p</span>
+                                <a href="../assets/wallpapers/JAHREI LABS - wakzashi wallpaper ver 4 ventura actual res MODERN LOGO.png" class="download-btn" download>Download</a>
+                                <span class="resolution-info">3456 × 2234 | PNG Format</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="wallpaper-card" data-category="eleventwentysix minimal">
+                    <!-- Wakizashi Sequoia -->
+                    <div class="wallpaper-card" data-category="jahrei-labs minimal macos">
                         <div class="wallpaper-preview">
-                            <span>Preview Coming Soon</span>
+                            <img src="../assets/wallpapers/JAHREI LABS - wakzashi wallpaper ver 5 SEQUOIA RETRO.png" alt="Wakizashi Sequoia">
+                            <div class="resolution-badge">3456 × 2234</div>
                         </div>
                         <div class="wallpaper-info">
-                            <h3 class="wallpaper-title">Windows 7 Aura Decay</h3>
+                            <h3 class="wallpaper-title">wakizashi sequoia retro</h3>
                             <div class="wallpaper-meta">
-                                <span class="project-tag">Windows 7</span>
-                                <span>August 2024</span>
+                                <span class="project-tag">macOS Sequoia</span>
+                                <span>2023</span>
                             </div>
-                            <p class="wallpaper-description">The Windows 7 default wallpaper's blue aura transformed into a haunting grayscale study, preserving the light rays while adding textural depth.</p>
+                            <!-- <p class="wallpaper-description">a retro-inspired iteration of the wakizashi design, embracing vintage digital aesthetics while maintaining the signature minimalist approach.</p> -->
                             <div class="download-section">
-                                <a href="#" class="download-btn">Download</a>
-                                <span class="resolution-info">Available in 4K, 2K, 1080p</span>
+                                <a href="../assets/wallpapers/JAHREI LABS - wakzashi wallpaper ver 5 SEQUOIA RETRO.png" class="download-btn" download>Download</a>
+                                <span class="resolution-info">3456 × 2234 | PNG Format</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="wallpaper-card" data-category="jahrei-labs abstract">
-                        <div class="wallpaper-preview">
-                            <span>Preview Coming Soon</span>
-                        </div>
-                        <div class="wallpaper-info">
-                            <h3 class="wallpaper-title">Mojave Dust</h3>
-                            <div class="wallpaper-meta">
-                                <span class="project-tag">macOS Mojave</span>
-                                <span>July 2024</span>
-                            </div>
-                            <p class="wallpaper-description">The warm Mojave desert dunes stripped of color and infused with gritty texture, creating a desolate yet beautiful monochromatic landscape.</p>
-                            <div class="download-section">
-                                <a href="#" class="download-btn">Download</a>
-                                <span class="resolution-info">Available in 4K, 2K, 1080p</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="wallpaper-card" data-category="eleventwentysix minimal">
-                        <div class="wallpaper-preview">
-                            <span>Preview Coming Soon</span>
-                        </div>
-                        <div class="wallpaper-info">
-                            <h3 class="wallpaper-title">Big Sur Static</h3>
-                            <div class="wallpaper-meta">
-                                <span class="project-tag">macOS Big Sur</span>
-                                <span>June 2024</span>
-                            </div>
-                            <p class="wallpaper-description">Big Sur's vibrant mountain peaks rendered in stark black and white with heavy grain, transforming the colorful vista into a dramatic monochrome study.</p>
-                            <div class="download-section">
-                                <a href="#" class="download-btn">Download</a>
-                                <span class="resolution-info">Available in 4K, 2K, 1080p</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="wallpaper-card" data-category="jahrei-labs abstract">
-                        <div class="wallpaper-preview">
-                            <span>Preview Coming Soon</span>
-                        </div>
-                        <div class="wallpaper-info">
-                            <h3 class="wallpaper-title">Windows 10 Hero Void</h3>
-                            <div class="wallpaper-meta">
-                                <span class="project-tag">Windows 10</span>
-                                <span>May 2024</span>
-                            </div>
-                            <p class="wallpaper-description">The Windows 10 Hero wallpaper's flowing light transformed into abstract grainy shadows, maintaining the dynamic movement while embracing darkness.</p>
-                            <div class="download-section">
-                                <a href="#" class="download-btn">Download</a>
-                                <span class="resolution-info">Available in 4K, 2K, 1080p</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="wallpaper-card" data-category="eleventwentysix minimal">
-                        <div class="wallpaper-preview">
-                            <span>Preview Coming Soon</span>
-                        </div>
-                        <div class="wallpaper-info">
-                            <h3 class="wallpaper-title">Catalina Noir</h3>
-                            <div class="wallpaper-meta">
-                                <span class="project-tag">macOS Catalina</span>
-                                <span>April 2024</span>
-                            </div>
-                            <p class="wallpaper-description">Catalina's island paradise stripped to its essence - black volcanic rock against grainy white sky, capturing the rugged beauty in monochrome.</p>
-                            <div class="download-section">
-                                <a href="#" class="download-btn">Download</a>
-                                <span class="resolution-info">Available in 4K, 2K, 1080p</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="wallpaper-card" data-category="jahrei-labs abstract">
-                        <div class="wallpaper-preview">
-                            <span>Preview Coming Soon</span>
-                        </div>
-                        <div class="wallpaper-info">
-                            <h3 class="wallpaper-title">iOS 14 Geometry</h3>
-                            <div class="wallpaper-meta">
-                                <span class="project-tag">iOS 14</span>
-                                <span>March 2024</span>
-                            </div>
-                            <p class="wallpaper-description">iOS 14's abstract geometric patterns reimagined as stark, grainy shapes floating in void - digital minimalism meets industrial texture.</p>
-                            <div class="download-section">
-                                <a href="#" class="download-btn">Download</a>
-                                <span class="resolution-info">Available in 4K, 2K, 1080p</span>
-                            </div>
-                        </div>
-                    </div>
-
+                    <!-- Retrovision Selene -->
                     <div class="wallpaper-card" data-category="eleventwentysix abstract">
                         <div class="wallpaper-preview">
-                            <span>Preview Coming Soon</span>
+                            <img src="../assets/wallpapers/retrovision - SELENE BLANK (windows xp).png" alt="Retrovision Selene">
                         </div>
                         <div class="wallpaper-info">
-                            <h3 class="wallpaper-title">Windows 11 Bloom Decay</h3>
+                            <h3 class="wallpaper-title">selene blank</h3>
                             <div class="wallpaper-meta">
-                                <span class="project-tag">Windows 11</span>
-                                <span>February 2024</span>
+                                <span class="project-tag">Windows XP</span>
+                                <span>2023</span>
                             </div>
-                            <p class="wallpaper-description">Windows 11's soft bloom wallpaper transformed into a harsh, grainy study of light and shadow - organic curves meet digital degradation.</p>
+                            <!-- <p class="wallpaper-description">a reimagination of Windows XP aesthetics through the lens of retrovision, creating a blank canvas that evokes nostalgia while offering modern minimalism.</p> -->
                             <div class="download-section">
-                                <a href="#" class="download-btn">Download</a>
-                                <span class="resolution-info">Available in 4K, 2K, 1080p</span>
+                                <a href="../assets/wallpapers/retrovision - SELENE BLANK (windows xp).png" class="download-btn" download>Download</a>
+                                <span class="resolution-info">PNG Format</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="wallpaper-card" data-category="jahrei-labs minimal">
-                        <div class="wallpaper-preview">
-                            <span>Preview Coming Soon</span>
-                        </div>
-                        <div class="wallpaper-info">
-                            <h3 class="wallpaper-title">Ubuntu Orange Void</h3>
-                            <div class="wallpaper-meta">
-                                <span class="project-tag">Ubuntu</span>
-                                <span>January 2024</span>
-                            </div>
-                            <p class="wallpaper-description">Ubuntu's warm orange gradient stripped to monochrome perfection, maintaining the gentle curves while adding heavy grain and contrast.</p>
-                            <div class="download-section">
-                                <a href="#" class="download-btn">Download</a>
-                                <span class="resolution-info">Available in 4K, 2K, 1080p</span>
-                            </div>
-                        </div>
-                    </div>
-
+                    <!-- Selene Silver Room -->
                     <div class="wallpaper-card" data-category="eleventwentysix abstract">
                         <div class="wallpaper-preview">
-                            <span>Preview Coming Soon</span>
+                            <img src="../assets/wallpapers/selene_silver_room - v2 (windows server 2003).png" alt="Selene Silver Room">
                         </div>
                         <div class="wallpaper-info">
-                            <h3 class="wallpaper-title">Monterey Waves Static</h3>
+                            <h3 class="wallpaper-title">selene silver room</h3>
                             <div class="wallpaper-meta">
-                                <span class="project-tag">macOS Monterey</span>
-                                <span>December 2023</span>
+                                <span class="project-tag">Windows Server 2003</span>
+                                <span>2023</span>
                             </div>
-                            <p class="wallpaper-description">Monterey's flowing waves frozen in time and stripped of color, creating a haunting seascape where motion meets stillness in grainy perfection.</p>
+                            <!-- <p class="wallpaper-description">windows server 2003's understated corporate aesthetic transformed into a stark topographical space with silver tones and minimal elements.</p> -->
                             <div class="download-section">
-                                <a href="#" class="download-btn">Download</a>
-                                <span class="resolution-info">Available in 4K, 2K, 1080p</span>
+                                <a href="../assets/wallpapers/selene_silver_room - v2 (windows server 2003).png" class="download-btn" download>Download</a>
+                                <span class="resolution-info">PNG Format</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="wallpaper-card" data-category="jahrei-labs minimal">
+                    <!-- Old iPhone Drops -->
+                    <div class="wallpaper-card" data-category="jahrei-labs eleventwentysix">
                         <div class="wallpaper-preview">
-                            <span>Preview Coming Soon</span>
+                            <img src="../assets/wallpapers/the-old-jahreilabs-x-1126 (old iphone Water Drops wallpaper).png" alt="Old iPhone Drops">
                         </div>
                         <div class="wallpaper-info">
-                            <h3 class="wallpaper-title">iOS 16 Lock Screen Decay</h3>
+                            <h3 class="wallpaper-title">water drops reimagined</h3>
                             <div class="wallpaper-meta">
-                                <span class="project-tag">iOS 16</span>
-                                <span>November 2023</span>
+                                <span class="project-tag">iOS</span>
+                                <span>2023</span>
                             </div>
-                            <p class="wallpaper-description">iOS 16's dynamic lock screen wallpapers reimagined as static, grainy compositions - the vibrancy replaced with stark industrial beauty.</p>
+                            <!-- <p class="wallpaper-description">the classic iPhone water drop wallpaper abstracted into a high-contrast collaboration between jahrei labs and eleventwentysix, emphasizing texture and form.</p> -->
                             <div class="download-section">
-                                <a href="#" class="download-btn">Download</a>
-                                <span class="resolution-info">Available in 4K, 2K, 1080p</span>
+                                <a href="../assets/wallpapers/the-old-jahreilabs-x-1126 (old iphone Water Drops wallpaper).png" class="download-btn" download>Download</a>
+                                <span class="resolution-info">PNG Format</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Snow Leopard -->
+                    <div class="wallpaper-card" data-category="jahrei-labs minimal macos">
+                        <div class="wallpaper-preview">
+                            <img src="../assets/wallpapers/wakizashi - snow leopard.png" alt="Snow Leopard">
+                            <div class="resolution-badge">3840 × 2160</div>
+                        </div>
+                        <div class="wallpaper-info">
+                            <h3 class="wallpaper-title">snow leopard static</h3>
+                            <div class="wallpaper-meta">
+                                <span class="project-tag">macOS Snow Leopard</span>
+                                <span>2023</span>
+                            </div>
+                            <!-- <p class="wallpaper-description">the serene Snow Leopard galaxy transformed into a grainy, monochromatic cosmic void while preserving the celestial beauty of the original.</p> -->
+                            <div class="download-section">
+                                <a href="../assets/wallpapers/wakizashi - snow leopard.png" class="download-btn" download>Download</a>
+                                <span class="resolution-info">3840 × 2160 | PNG Format</span>
                             </div>
                         </div>
                     </div>
@@ -641,5 +688,6 @@
             });
         });
     </script>
+    <script src="../js/wallpaper-lightbox.js"></script>
 </body>
-</html> 
+</html>

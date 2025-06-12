@@ -174,6 +174,11 @@ class ProjectLoader {
             projectCard.classList.add('featured-project');
         }
         
+        // Add monochrome styling for the Serenity project
+        if (project.monochrome) {
+            projectCard.classList.add('monochrome-project');
+        }
+        
         // Add data tags for filtering (software page)
         if (project.tags && project.tags.length > 0) {
             projectCard.dataset.tags = project.tags.join(',');

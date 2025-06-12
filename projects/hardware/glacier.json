@@ -2,13 +2,12 @@
   "title": "Glacier",
   "description": "My retrofitted ThinkPad T480 designed for portability, hacking, and field development work.",
   "year": "2025-Present",
-  "category": "ThinkPad / Portable Workstation",
+  "category": "Portable Workstation",
   "status": "Planning",
   "order": 3,
   "tags": ["ThinkPad", "Linux", "Portable", "Dev Machine"],
   "gallery": [
-    "/assets/glacier/1.png",
-    "/assets/glacier/2.png"
+    "/assets/jl-placeholder.png"
   ],
   "details": "<p>System specifications:</p><ul><li>CPU: Intel Core i5-8350U</li><li>24GB DDR4 RAM</li><li>512GB NVMe SSD</li><li>1080p IPS display</li><li>OS: Fedora Linux</li></ul><p>Glacier is my rugged portable machine used for coding on the go, trying out embedded systems workflows, or working in environments where I’d rather not bring premium gear. Solid battery life and classic ThinkPad feel.</p>"
 }

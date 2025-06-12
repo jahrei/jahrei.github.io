@@ -1,0 +1,14 @@
+{
+    "title": "serenity",
+    "description": "My interpretation of a BMS (Be-Music Source) game client & web service.",
+    "year": "2025-Present",
+    "category": "Game Development",
+    "status": "In Progress",
+    "order": 1,
+    "tags": ["Game Development", "Rhythm Games", "Minimalist Design", "BMS Client"],
+    "monochrome": true,
+    "gallery": [
+        "/assets/serenity/website.png"
+    ],
+    "details": "<p>serenity is a personal reimagining of the BMS game client. It merges form and function through a sharp monochrome aesthetic, tight input response, and a long-term vision of evolving into its own standalone game and community.</p><p><strong>Features:</strong></p><ul><li>Website: built myself</li><li>Client: Fork of LR2oraja ~endless dream~</li><li>Web Service: Fork of zk's Tachi</li><li>Online score tracking and leaderboards</li><li>Never-seen-before progressive overload mechanics</li><li>Daily missions and progressive skill challenges</li><li>Monochromatic aesthetic</li><li>Optimized input handling with reduced latency</li><li>Focused feedback systems that prioritize player performance</li></ul><p>Everything about Serenity is deliberate — from the fonts to the way feedback pulses on screen — designed not for flash, but for focus. The project represents a philosophy that game interfaces should enhance the core experience rather than compete with it.</p><p><strong>Technologies:</strong> Java, OpenGL, LR2oraja (fork), JavaScript, Node.js</p>"
+}

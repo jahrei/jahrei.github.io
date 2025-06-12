@@ -4,6 +4,7 @@
     "year": "2025-Present",
     "category": "Productivity Tool",
     "status": "In Progress",
+    "order": 5,
     "tags": ["Productivity", "Automation", "JavaScript"],
     "gallery": [
         "/assets/kairos-dashboard/placeholder1.jpg",

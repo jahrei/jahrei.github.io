@@ -4,6 +4,7 @@
     "year": "May 2025-Present",
     "category": "Web Development",
     "status": "In Progress",
+    "order": 2,
     "tags": ["Web Development", "UI/UX", "Shopify"],
     "gallery": [
         "/assets/liftgear/LGlogo-2023-Badge.png"

@@ -7,8 +7,7 @@
   "order": 4,
   "tags": ["MacBook", "Apple Silicon", "Productivity"],
   "gallery": [
-    "/assets/wakizashi/1.png",
-    "/assets/wakizashi/2.png"
+    "/assets/jl-placeholder.png"
   ],
   "details": "<p>System specifications:</p><ul><li>CPU: Apple M1 (8-core)</li><li>8GB unified memory</li><li>256GB NVMe storage</li><li>macOS Sonoma with Unix tooling</li><li>Daily driver for school, design, and mobile development</li></ul><p>wakizashi is my lightweight productivity machine — ideal for writing, Git, Figma, remote work, and handling the majority of creative and academic workflows on the go.</p>"
 }

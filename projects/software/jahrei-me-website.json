@@ -7,9 +7,8 @@
     "order": 0,
     "tags": ["Web Development", "Frontend", "UI/UX", "Performance", "Vanilla JS"],
     "gallery": [
-        "/assets/jahrei-website/homepage.jpg",
-        "/assets/jahrei-website/software-page.jpg",
-        "/assets/jahrei-website/project-overlay.jpg"
+        "/assets/jahrei-website/homepage.png",
+        "/assets/jahrei-website/archive.png"
     ],
     "details": "<p><strong>Technical Architecture & Features:</strong></p><ul><li>100% vanilla HTML5, CSS3, and JavaScript - no frameworks or build tools</li><li>Fully responsive design with mobile-first approach and dynamic navigation</li><li>Advanced CSS Grid and Flexbox layouts with custom property-based design system</li><li>Dynamic project loading system with JSON-based content management</li><li>Interactive project galleries with lightbox functionality and thumbnail navigation</li><li>Sophisticated filtering system using data attributes and DOM manipulation</li><li>Custom animations including Matrix-style code rain and smooth scroll behaviors</li><li>Intersection Observer API for performance-optimized scroll animations</li><li>Sticky navigation with transform-based hide/show behavior</li><li>Semantic HTML structure with proper accessibility considerations</li></ul><p><strong>Performance & User Experience:</strong></p><ul><li>Optimized for Core Web Vitals with minimal external dependencies</li><li>Progressive enhancement ensuring functionality across all modern browsers</li><li>Mobile hamburger menu with smooth transitions and proper touch interactions</li><li>Advanced overlay system for expandable project details and social connections</li><li>Cross-device compatibility with responsive typography and adaptive layouts</li><li>GitHub Pages deployment with automated CI/CD pipeline</li></ul><p><strong>Technologies:</strong> HTML5, CSS3, Vanilla JavaScript, GitHub Pages, Git</p>"
 } 
